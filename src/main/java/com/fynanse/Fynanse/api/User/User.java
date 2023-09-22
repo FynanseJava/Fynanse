@@ -1,31 +1,37 @@
 package com.fynanse.Fynanse.api.User;
 
-import java.util.UUID;
+import jakarta.persistence.*;
 
+@Entity
 public class User {
-    public long ID;
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name = "id", nullable = false)
+    private Long id;
+
     private String username;
     private String email;
     private String password;
     public String firstName;
     public String lastName;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public User(){
         System.out.println("User object created");
     }
-    public User(long ID, String username, String email, String password, String firstName, String lastName) {
-        this.ID = ID;
+    public User(String username, String email, String password, String firstName, String lastName) {
         this.username = username;
         this.email = email;
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
-    }
-    public long getID() {
-        return ID;
-    }
-    public void setID(long ID) {
-        this.ID = ID;
     }
     public String getFirstName() {
         return firstName;
