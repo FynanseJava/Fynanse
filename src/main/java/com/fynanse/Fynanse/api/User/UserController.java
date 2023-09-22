@@ -17,7 +17,7 @@ public class UserController {
 
     @GetMapping("/api/users/{id}")
     public User getUserByID(@PathVariable int id){
-        return userService.getUserByID(id);
+        return userService.getUser(id);
     }
 
     @RequestMapping(method=RequestMethod.POST, value="/api/users")
