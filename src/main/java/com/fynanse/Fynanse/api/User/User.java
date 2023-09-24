@@ -3,15 +3,21 @@ package com.fynanse.Fynanse.api.User;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name="USER")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
-    private Long id;
+    @Column(name = "ID", nullable = false)
+    private int id;
+    @Column(name = "USERNAME")
     private String username;
+    @Column(name = "EMAIL")
     private String email;
-    private String password;
+    @Column(name = "USER_PASSWORD")
+    private String userPassword;
+    @Column(name = "FIRST_NAME")
     public String firstName;
+    @Column(name = "LAST_NAME")
     public String lastName;
     public User(){
         System.out.println("User object created");
@@ -19,7 +25,7 @@ public class User {
     public User(String username, String email, String password, String firstName, String lastName) {
         this.username = username;
         this.email = email;
-        this.password = password;
+        this.userPassword = password;
         this.firstName = firstName;
         this.lastName = lastName;
     }
@@ -47,10 +53,10 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
-    public String getPassword() {
-        return password;
+    public String getUserPassword() {
+        return userPassword;
     }
-    public void setPassword(String password) {
-        this.password = password;
+    public void setUserPassword(String password) {
+        this.userPassword = password;
     }
 }

@@ -1,7 +1,7 @@
-com/fynanse/Fynanse/Website/LoginController.class
-com/fynanse/Fynanse/MainApplication.class
-com/fynanse/Fynanse/api/User/UserController.class
-com/fynanse/Fynanse/api/User/User.class
-com/fynanse/Fynanse/api/User/UserRepository.class
-com/fynanse/Fynanse/api/User/UserService.class
-com/fynanse/Fynanse/Website/SignupController.class
+com\fynanse\Fynanse\Website\SignupController.class
+com\fynanse\Fynanse\api\User\UserController.class
+com\fynanse\Fynanse\Website\LoginController.class
+com\fynanse\Fynanse\api\User\UserRepository.class
+com\fynanse\Fynanse\MainApplication.class
+com\fynanse\Fynanse\api\User\User.class
+com\fynanse\Fynanse\api\User\UserService.class

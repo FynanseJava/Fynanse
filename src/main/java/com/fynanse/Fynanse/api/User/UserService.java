@@ -12,17 +12,14 @@ import java.util.Optional;
 public class UserService {
     @Autowired
     private UserRepository userRepository;
-    private final List<User> users_OLD = new ArrayList<>(Arrays.asList(
-            new User("daiyaan", "email@email.com", "password", "Daiyaan", "Fardeen"),
-            new User("nasim", "nasim@email.com", "nasim", "Nasim", "Parvez"),
-            new User("bishal", "bishal@email.com", "bishal", "Bishal", "Achariya")
-    ));
     public List<User> getAllUsers(){
         List<User> users = null;
-        userRepository.findAll().forEach(users::add);
+        for (User user : userRepository.findAll()) {
+            users.add(user);
+        }
         return users;
     }
-    public Optional<User> getUser(long id){
+    public Optional<User> getUser(int id){
         return userRepository.findById(id);
     }
 
@@ -33,7 +30,7 @@ public class UserService {
     public void updateUser(long id, User user) {
         userRepository.save(user);
     }
-    public void deleteUser(long id) {
+    public void deleteUser(int id) {
         userRepository.deleteById(id);
     }
 }
