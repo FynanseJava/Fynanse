@@ -5,10 +5,9 @@ import jakarta.persistence.*;
 @Entity
 @Table(name="USER")
 public class User {
+    private int id;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID", nullable = false)
-    private int id;
     @Column(name = "USERNAME")
     private String username;
     @Column(name = "EMAIL")

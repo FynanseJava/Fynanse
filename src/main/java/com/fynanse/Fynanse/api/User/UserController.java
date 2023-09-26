@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
+import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
+
 @RestController
 public class UserController {
     @Autowired
@@ -16,9 +18,9 @@ public class UserController {
         return userService.getAllUsers();
     }
 
-    @GetMapping("/api/users/{id}")
-    public Optional<User> getUserByID(@PathVariable int id){
-        return userService.getUser(id);
+    @GetMapping("/api/users/{username}")
+    public Optional<User> getUserByID(@PathVariable String username){
+        return userService.getUser(username);
     }
 
     @RequestMapping(method=RequestMethod.POST, value="/api/users")
@@ -26,13 +28,8 @@ public class UserController {
         userService.addUser(user);
     }
 
-    @RequestMapping(method=RequestMethod.PUT, value="/api/users/{id}")
-    public void addUserByID(@RequestBody User user, @PathVariable int id){
-        userService.updateUser(id, user);
-    }
-
-    @RequestMapping(method=RequestMethod.DELETE, value="/api/users/{id}")
-    public void deleteUser(@PathVariable int id){
-        userService.deleteUser(id);
+    @RequestMapping(method=RequestMethod.DELETE, value="/api/users/{username}")
+    public void deleteUser(@PathVariable String username){
+        userService.deleteUser(username);
     }
 }
