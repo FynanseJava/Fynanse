@@ -1,6 +1,7 @@
 -------------------------------------------------------------------------------
 Test set: com.fynanse.Fynanse.DemoApplicationTests
 -------------------------------------------------------------------------------
+<<<<<<< HEAD
 Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.114 s <<< FAILURE! - in com.fynanse.Fynanse.DemoApplicationTests
 com.fynanse.Fynanse.DemoApplicationTests  Time elapsed: 1.114 s  <<< ERROR!
 java.lang.IllegalStateException: Unable to find a @SpringBootConfiguration, you need to use @ContextConfiguration or @SpringBootTest(classes=...) with your test
@@ -69,3 +70,6 @@ java.lang.IllegalStateException: Unable to find a @SpringBootConfiguration, you 
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
 
+=======
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.716 s - in com.fynanse.Fynanse.DemoApplicationTests
+>>>>>>> 56fb085404c8c3f0f351e8ecb4847c6af60fa636

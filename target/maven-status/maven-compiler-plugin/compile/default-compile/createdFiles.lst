@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 com\fynansejava\fynanse\api\controllers\UserController.class
 com\fynansejava\fynanse\api\models\User.class
 com\fynansejava\fynanse\FynanseApplication.class
 com\fynansejava\fynanse\api\services\UserService.class
 com\fynansejava\fynanse\api\repositories\UserRepository.class
+=======
+>>>>>>> 56fb085404c8c3f0f351e8ecb4847c6af60fa636
