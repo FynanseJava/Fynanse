@@ -7,12 +7,7 @@ import jakarta.persistence.*;
 public class User {
     private int id;
     @Id
-<<<<<<< HEAD:src/main/java/com/fynanse/Fynanse/api/models/User.java
     @Column(nullable = false, unique = true)
-=======
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "USERNAME")
->>>>>>> 56fb085404c8c3f0f351e8ecb4847c6af60fa636:src/main/java/com/fynanse/Fynanse/api/User/User.java
     private String username;
     @Column(nullable = false, unique = true)
     private String email;
