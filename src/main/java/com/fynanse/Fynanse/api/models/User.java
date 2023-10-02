@@ -1,4 +1,4 @@
-package com.fynanse.Fynanse.api.User;
+package com.fynanse.Fynanse.api.models;
 
 import jakarta.persistence.*;
 
@@ -6,19 +6,14 @@ import jakarta.persistence.*;
 @Table(name="USER")
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID", nullable = false)
-    private int id;
-    @Column(name = "USERNAME")
+    @Column(nullable = false, unique = true)
     private String username;
-    @Column(name = "EMAIL")
+    @Column(nullable = false, unique = true)
     private String email;
-    @Column(name = "USER_PASSWORD")
     private String userPassword;
-    @Column(name = "FIRST_NAME")
     public String firstName;
-    @Column(name = "LAST_NAME")
     public String lastName;
+
     public User(){
         System.out.println("User object created");
     }
