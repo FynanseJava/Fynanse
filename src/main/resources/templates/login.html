@@ -3,20 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Fynanse</title>
 </head>
 <body>
-    <h1>Login</h1>
-    <a href="/signup">Register</a>
-    <div class="loginForm">
-        <form th:action="@{/loginFormHandle}" th:object="${inputUser}" method="POST">
-            <label for="username">Username: </label>
-            <input type="text" th:field="*{username}" name="username" placeholder="Username">
-            <label for="userPassword">Password: </label>
-            <input type="password" th:field="*{userPassword}" name="userPassword" placeholder="Password">
-            <button type="submit">Submit</button>
-        </form>
-
-    </div>
+    <h1>Sign Up</h1>
+    <a href="/signup">Sign Up</a>
 </body>
 </html>

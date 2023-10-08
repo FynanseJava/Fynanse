@@ -9,8 +9,6 @@ public class User {
     @Column(nullable = false, unique = true)
     private String username;
     private String userPassword;
-
-    public Boolean isLoggedIn = false;
     public User(){
         System.out.println("User object created");
     }
