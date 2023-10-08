@@ -4,12 +4,13 @@ import com.fynanse.Fynanse.api.models.User;
 import com.fynanse.Fynanse.api.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
 
-@RestController
+@Controller
 public class UserController {
     @Autowired
     private UserService userService;
@@ -29,7 +30,7 @@ public class UserController {
     )
     public String addUser(@ModelAttribute("user") User user){
         userService.addUser(user);
-        return "signup_success";
+        return "redirect:/login";
     }
 
     @RequestMapping(method=RequestMethod.PUT, value="/api/users/{username}")
