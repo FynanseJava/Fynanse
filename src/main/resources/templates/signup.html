@@ -6,9 +6,12 @@
     <title>Sign Up</title>
 </head>
 <body>
-  <form th:action="@{/api/users}" th:method="POST" th:object="${user}" enctype="application/json">
-    <input type="text" th:field="*{username}" placeholder="Username">
-    <input type="password" th:field="*{userPassword}    " placeholder="Password">
+    <h1>Sign Up</h1>
+  <form th:action="@{/api/users}" th:method="POST" th:object="${user}">
+      <label for="username">Username: </label>
+    <input type="text" th:field="*{username}" name="username" placeholder="Username">
+      <label for="userPassword">Password: </label>
+    <input type="password" th:field="*{userPassword}" name="userPassword" placeholder="Password">
     <button type="submit">Submit</button>
   </form>
 </body>
