@@ -1,10 +1,25 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Dashboard</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
 </head>
 <body>
-  <h1>Dashboard</h1>
+<h1 align="center">Account Details</h1>
+<table align="center">
+    <tr align="center">
+        <th>Username</th>
+        <th>Current Balance</th>
+        <th>Password</th>
+    </tr>
+    <tr th:object="${currentUser}" align="center">
+        <td th:text="${currentUser.username}"></td>
+        <td th:text="${currentUser.currentBalance}"></td>
+        <td th:text="${currentUser.userPassword}"></td>
+    </tr>
+</table>
 </body>
 </html>
