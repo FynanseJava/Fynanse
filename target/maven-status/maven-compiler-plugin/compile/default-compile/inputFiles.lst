@@ -1,7 +1,8 @@
-C:\Users\Administrator\Desktop\Fynanse\src\main\java\com\fynanse\Fynanse\api\services\UserService.java
-C:\Users\Administrator\Desktop\Fynanse\src\main\java\com\fynanse\Fynanse\FynanseApplication.java
-C:\Users\Administrator\Desktop\Fynanse\src\main\java\com\fynanse\Fynanse\api\controllers\UserController.java
-C:\Users\Administrator\Desktop\Fynanse\src\main\java\com\fynanse\Fynanse\api\models\User.java
-C:\Users\Administrator\Desktop\Fynanse\src\main\java\com\fynanse\Fynanse\api\repositories\UserRepository.java
-C:\Users\Administrator\Desktop\Fynanse\src\main\java\com\fynanse\Fynanse\Website\LoginController.java
-C:\Users\Administrator\Desktop\Fynanse\src\main\java\com\fynanse\Fynanse\Website\SignupController.java
+/home/daiyaan/Desktop/Fynanse/src/main/java/com/fynanse/Fynanse/api/repositories/UserRepository.java
+/home/daiyaan/Desktop/Fynanse/src/main/java/com/fynanse/Fynanse/FynanseApplication.java
+/home/daiyaan/Desktop/Fynanse/src/main/java/com/fynanse/Fynanse/Website/SignupController.java
+/home/daiyaan/Desktop/Fynanse/src/main/java/com/fynanse/Fynanse/Website/DashboardController.java
+/home/daiyaan/Desktop/Fynanse/src/main/java/com/fynanse/Fynanse/api/models/User.java
+/home/daiyaan/Desktop/Fynanse/src/main/java/com/fynanse/Fynanse/Website/LoginController.java
+/home/daiyaan/Desktop/Fynanse/src/main/java/com/fynanse/Fynanse/api/services/UserService.java
+/home/daiyaan/Desktop/Fynanse/src/main/java/com/fynanse/Fynanse/api/controllers/UserController.java

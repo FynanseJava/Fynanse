@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.fynanse</groupId>
 	<artifactId>Fynanse</artifactId>
-	<version>Alpha 0.0.1</version>
+	<version>Pre-release_0.4.0</version>
 	<name>Fynanse</name>
 	<description>Personal finance management on the web using spring boot</description>
 	<properties>
@@ -61,10 +61,6 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
         </dependency>
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
