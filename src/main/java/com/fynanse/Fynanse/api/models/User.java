@@ -1,7 +1,18 @@
 package com.fynanse.Fynanse.api.models;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.*;
+import org.hibernate.proxy.HibernateProxy;
 
+import java.util.Objects;
+
+@Getter
+@Setter
+@ToString
+@RequiredArgsConstructor
 @Entity
 @Table(name="USER")
 public class User {
@@ -9,25 +20,29 @@ public class User {
     @Column(nullable = false, unique = true)
     private String username;
     private String userPassword;
+    @Column(columnDefinition = "DECIMAL(10,2) DEFAULT 0.0")
+    private double currentBalance;
+    @Column(columnDefinition = "boolean default false")
+    public Boolean loggedIn = false;
+    public User(String username,  String password, double currentBalance) {
+        this.username = username;
+        this.userPassword = password;
+        this.currentBalance = currentBalance;
+    }
 
-    public Boolean isLoggedIn = false;
-    public User(){
-        System.out.println("User object created");
+    @Override
+    public final boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null) return false;
+        Class<?> oEffectiveClass = o instanceof HibernateProxy ? ((HibernateProxy) o).getHibernateLazyInitializer().getPersistentClass() : o.getClass();
+        Class<?> thisEffectiveClass = this instanceof HibernateProxy ? ((HibernateProxy) this).getHibernateLazyInitializer().getPersistentClass() : this.getClass();
+        if (thisEffectiveClass != oEffectiveClass) return false;
+        User user = (User) o;
+        return getUsername() != null && Objects.equals(getUsername(), user.getUsername());
     }
-    public User(String username,  String password) {
-        this.username = username;
-        this.userPassword = password;
-    }
-    public String getUsername() {
-        return username;
-    }
-    public void setUsername(String username) {
-        this.username = username;
-    }
-    public String getUserPassword() {
-        return userPassword;
-    }
-    public void setUserPassword(String password) {
-        this.userPassword = password;
+
+    @Override
+    public final int hashCode() {
+        return this instanceof HibernateProxy ? ((HibernateProxy) this).getHibernateLazyInitializer().getPersistentClass().hashCode() : getClass().hashCode();
     }
 }
