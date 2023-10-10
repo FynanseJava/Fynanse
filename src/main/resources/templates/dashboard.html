@@ -5,9 +5,10 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Dashboard</title>
 </head>
 <body>
+<th:object="${currentUser}"/>
 <h1 align="center">Account Details</h1>
 <table align="center">
     <tr align="center">
@@ -15,7 +16,7 @@
         <th>Current Balance</th>
         <th>Password</th>
     </tr>
-    <tr th:object="${currentUser}" align="center">
+    <tr align="center">
         <td th:text="${currentUser.username}"></td>
         <td th:text="${currentUser.currentBalance}"></td>
         <td th:text="${currentUser.userPassword}"></td>
