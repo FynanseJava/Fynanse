@@ -11,6 +11,8 @@ import java.util.Optional;
 
 @Controller
 public class LoginController {
+    @Autowired
+    private UserService userService;
     @GetMapping("/login")
     public String showLoginPage(Model model) {
         User inputUser = new User();
@@ -18,8 +20,6 @@ public class LoginController {
         return "login";
     }
 
-    @Autowired
-    private UserService userService;
 
     @RequestMapping(path="/loginFormHandle", method = RequestMethod.POST)
     public String loginFormHandle(@ModelAttribute("inputUser") User inputUser) {
@@ -28,7 +28,8 @@ public class LoginController {
             return "redirect:/login";
         }
         if (storedUser.get().getUserPassword().equals(inputUser.getUserPassword())) {
-            storedUser.get().isLoggedIn = true;
+            storedUser.get().loggedIn=true;
+            userService.addUser(storedUser.get());
             return "redirect:/dashboard";
         } else {
             return "redirect:/login";
