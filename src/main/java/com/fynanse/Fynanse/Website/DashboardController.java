@@ -15,7 +15,7 @@ public class DashboardController {
     @GetMapping("/")
     public String showHome(){
         Optional<User> currentUser = userService.getCurrentUser();
-        if(currentUser.get().loggedIn){
+        if(currentUser.isPresent()){
             return "redirect:/dashboard";
         }
         else{
