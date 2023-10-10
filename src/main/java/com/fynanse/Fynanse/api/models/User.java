@@ -22,13 +22,14 @@ public class User {
     private String userPassword;
     @Column(columnDefinition = "DECIMAL(10,2) DEFAULT 0.0")
     private double currentBalance;
+    @Column(columnDefinition = "DECIMAL(10,2) DEFAULT 0.0")
+    private double lastSpent;
+    @Column(columnDefinition = "DECIMAL(10,2) DEFAULT 0.0")
+    private double weeklySpent;
+    @Column(columnDefinition = "DECIMAL(10,2) DEFAULT 0.0")
+    private double monthlySpent;
     @Column(columnDefinition = "boolean default false")
     public Boolean loggedIn = false;
-    public User(String username,  String password, double currentBalance) {
-        this.username = username;
-        this.userPassword = password;
-        this.currentBalance = currentBalance;
-    }
 
     @Override
     public final boolean equals(Object o) {
