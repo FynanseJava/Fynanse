@@ -25,6 +25,9 @@ public class DashboardController {
     @GetMapping("/dashboard")
     public String showDashboard(Model model){
         Optional<User> currentUser = userService.getCurrentUser();
+        if(currentUser.isEmpty()) {
+            return "redirect:/login";
+        }
         model.addAttribute("currentUser", currentUser.get());
         return "dashboard";
     }
