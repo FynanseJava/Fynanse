@@ -1,5 +1,7 @@
 package com.fynanse.Fynanse.api.services;
 
+import com.fynanse.Fynanse.api.models.Account;
+import com.fynanse.Fynanse.api.repositories.AccountRepository;
 import com.fynanse.Fynanse.api.repositories.UserRepository;
 import com.fynanse.Fynanse.api.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,9 +15,11 @@ import java.util.Optional;
 public class UserService {
     @Autowired
     private UserRepository userRepository;
+    @Autowired
+    private AccountRepository accountRepository;
     public List<User> getAllUsers(){
         List<User> users = new ArrayList<>();
-        users.addAll(userRepository.findAll());
+        userRepository.findAll().forEach(users::add);
         return users;
     }
     public Optional<User> getUserById(String username){
@@ -30,7 +34,6 @@ public class UserService {
     public void addUser(User user) {
         userRepository.save(user);
     }
-
     public void updateUser(String username, User user) {
         userRepository.save(user);
     }
@@ -39,5 +42,11 @@ public class UserService {
     }
     public void deleteUser(String username) {
         userRepository.deleteById(username);
+    }
+    public Account getAccount(String username){
+        return accountRepository.findByUserUsername(username);
+    }
+    public void saveAccountInfo(Account account){
+        accountRepository.save(account);
     }
 }
