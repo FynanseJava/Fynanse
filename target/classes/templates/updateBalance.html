@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${updateTitle}"></title>
+</head>
+<body>
+  <h1 th:text="${updateTitle}"></h1>
+    <p>Amount</p>
+    <div>
+        <form th:action="@{/updateAmount}" th:method="POST">
+            <input type="number" name="amount" th:object="${amount}" th:placeholder="${updateTitle}">
+            <button type="submit">Ok</button>
+        </form>
+    </div>
+</body>
+</html>
