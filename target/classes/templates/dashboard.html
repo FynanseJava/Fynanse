@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -8,22 +8,23 @@
     <title>Dashboard</title>
 </head>
 <body>
-<th:object="${currentUser}"/>
-<h1 align="center">Account Details</h1>
-<table align="center">
-    <tr align="center">
-        <th>Username</th>
-        <th>Current Balance</th>
-        <th>Password</th>
-    </tr>
-    <tr align="center">
-        <td th:text="${currentUser.username}"></td>
-        <td th:text="${currentUser.currentBalance}"></td>
-        <td th:text="${currentUser.userPassword}"></td>
-    </tr>
+    <th:object="${currentUser}"/>
+    <h1 align="center">Account Details</h1>
+    <a href="/logout">Logout</a>
+    <table align="center">
+        <tr align="center">
+            <th>Username</th>
+            <th>Current Balance</th>
+            <th>Password</th>
+        </tr>
+        <tr align="center">
+            <td th:text="${currentUser.username}"></td>
+            <td th:text="${currentUser.currentBalance}"></td>
+            <td th:text="${currentUser.userPassword}"></td>
+        </tr>
+    </table>
     <a href="/deposit">Deposit</a>
     <br>
     <a href="/withdraw">Withdraw</a>
-</table>
 </body>
 </html>
