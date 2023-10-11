@@ -1,6 +1,8 @@
 package com.fynanse.Fynanse.Website;
 
+import com.fynanse.Fynanse.api.models.Account;
 import com.fynanse.Fynanse.api.models.User;
+import com.fynanse.Fynanse.api.repositories.AccountRepository;
 import com.fynanse.Fynanse.api.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.AutoConfigureOrder;
@@ -15,16 +17,21 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class SignupController {
     @Autowired
     private UserService userService;
+    @Autowired
+    private AccountRepository accountRepository;
+
     @GetMapping("/signup")
     public String showSignUp(Model model){
         User user = new User();
         model.addAttribute("user", user);
         return "signup";
     }
-    @RequestMapping(path = "/signUpFormHanlde",
-            method = RequestMethod.POST
-    )
-    public String addUser(@ModelAttribute("user") User user){
+    @RequestMapping(path = "/signUpFormHanlde", method = RequestMethod.POST)
+    public String addUser(@ModelAttribute("user") User user, @ModelAttribute("startingBalance") double amount){
+        Account newAccount = new Account();
+        newAccount.setCurrentBalance(amount);
+        user.setAccount(newAccount);
+        accountRepository.save(newAccount);
         userService.addUser(user);
         return "redirect:/login";
     }
