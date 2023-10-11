@@ -6,6 +6,7 @@
 *.iws
 workspace.xml
 tasks.xml
+.original
 
 # Log file
 *.log
