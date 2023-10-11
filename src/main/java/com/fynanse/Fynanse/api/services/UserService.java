@@ -34,6 +34,9 @@ public class UserService {
     public void updateUser(String username, User user) {
         userRepository.save(user);
     }
+    public void updateUser(User user) {
+        userRepository.save(user);
+    }
     public void deleteUser(String username) {
         userRepository.deleteById(username);
     }
