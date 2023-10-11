@@ -1,9 +1,6 @@
 package com.fynanse.Fynanse.api.models;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.proxy.HibernateProxy;
 
@@ -20,16 +17,11 @@ public class User {
     @Column(nullable = false, unique = true)
     private String username;
     private String userPassword;
-    @Column(columnDefinition = "DECIMAL(10,2) DEFAULT 0.0")
-    private double currentBalance;
-    @Column(columnDefinition = "DECIMAL(10,2) DEFAULT 0.0")
-    private double lastSpent;
-    @Column(columnDefinition = "DECIMAL(10,2) DEFAULT 0.0")
-    private double weeklySpent;
-    @Column(columnDefinition = "DECIMAL(10,2) DEFAULT 0.0")
-    private double monthlySpent;
     @Column(columnDefinition = "boolean default false")
     public Boolean loggedIn = false;
+    @ManyToOne
+    @JoinColumn(name = "account_id")
+    private Account account;
 
     @Override
     public final boolean equals(Object o) {
