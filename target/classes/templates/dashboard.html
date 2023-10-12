@@ -16,21 +16,15 @@
     <h1 align="center">Dashboard</h1>
     <a href="/logout">Logout</a>
 <!--    Saying hi-->
-    <h2 th:text="'Hi '+${currentUser.firstName}+' '+${currentUser.lastName}+'!'"></h2>
-    <table align="center">
-        <tr align="center">
-            <th>Last Spent</th>
-            <th>Current Balance</th>
-            <th>In this Week</th>
-            <th>In this Month</th>
-        </tr>
-        <tr align="center">
-            <td th:text="${currentUser.account.lastSpent}"></td>
-            <td th:text="${currentUser.account.currentBalance}"></td>
-            <td th:text="${currentUser.account.weeklySpent}"></td>
-            <td th:text="${currentUser.account.monthlySpent}"></td>
-        </tr>
-    </table>
+    <h2 th:text="'Hi '+${firstName}+' '+${lastName}+'!'"></h2>
+<!--    you can convert the <p></p> tag to any tag you want and nest it within anything-->
+    <p th:text="${lastSpent}+' tk'"></p>
+    <p th:text="${currentBalance+' tk'}"></p>
+    <p th:text="${spentLastWeek}+' tk'"></p>
+    <p th:text="${spentLastMonth}+' tk'"></p>
+    <p th:text="${daysRemaining}+' days remaining till next month'"></p>
+    <p th:text="${remainingBalancePercentage}+'%'"></p>
+
     <a href="/deposit">Deposit</a>
     <br>
     <a href="/withdraw">Withdraw</a>
