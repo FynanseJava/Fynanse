@@ -7,20 +7,29 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Login</title>
 </head>
-<body class="flex justify-center items-center h-screen bg-blue-300 text-black">
-    <div class="bg-white">
-        <h1 class="">Login</h1>
-        <a href="/signup">Register</a>
-        <div class="loginForm">
-            <form th:action="@{/loginFormHandle}" th:object="${inputUser}" method="POST">
-                <label for="username">Username: </label>
-                <input type="text" th:field="*{username}" name="username" placeholder="Username">
-                <label for="userPassword">Password: </label>
-                <input type="password" th:field="*{userPassword}" name="userPassword" placeholder="Password">
-                <button type="submit">Submit</button>
-            </form>
-    
-        </div>
+<body class="">
+    <div class="flex justify-center items-center h-screen">
+
     </div>
+    <h1 class="text-5xl font-bold">Login</h1>
+    <a class="text-5xl font-bold" href="/signup">Register</a>
+    <div class="hero min-h-screen bg-base-200">
+        <div class="hero-content text-center">
+          <div class="max-w-md">
+
+            <p class="py-6"></p>
+            <div class="loginForm">
+                <form th:action="@{/loginFormHandle}" th:object="${inputUser}" method="POST">
+                    <label for="username">Username: </label>
+                    <input type="text" th:field="*{username}" name="username" placeholder="Username"><br>
+                    <label for="userPassword">Password: </label>
+                    <input type="password" th:field="*{userPassword}" name="userPassword" placeholder="Password"><br>
+                    
+                </form>
+            </div>
+            <button class="btn btn-primary" type="submit">Submit</button>
+          </div>
+        </div>
+      </div>
 </body>
 </html>
