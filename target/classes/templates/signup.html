@@ -27,5 +27,36 @@
           <input type="number" th:object="${startingBalance}" name="startingBalance" placeholder="Starting Balance">
     <button type="submit">Submit</button>
   </form>
+
+  <!-- trying the new part here -->
+  <div class="hero min-h-screen bg-base-200">
+    <div class="hero-content flex-col lg:flex-row-reverse">
+      <!-- <div class="text-center lg:text-left">
+        <h1 class="text-5xl font-bold">Login now!</h1>
+        <p class="py-6">Login if you want some charm in life</p>
+      </div> -->
+      <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+        <form class="card-body" th:action="@{/signUpFormHanlde}" th:method="POST" th:object="${user}">
+          <div class="form-control">
+            <label class="label" for="username"><span class="label-text">Username: </span></label>
+            <input type="text" th:field="*{username}" class="input input-bordered"  name="username" placeholder="Username">
+          </div>
+          <div class="form-control">
+            <label class="label" for="userPassword"><span class="label-text">Password: </span></label>
+            <!-- <input type="password" placeholder="password"  required /> -->
+            <input type="password" th:field="*{userPassword}" class="input input-bordered" name="userPassword" placeholder="Password">
+          </div>
+          <div class="form-control">
+            <label class="label" for="startingBalance">Starting Balance: </label>
+            <input type="number" class="input input-bordered" th:object="${startingBalance}" name="startingBalance" placeholder="Starting Balance">
+          </div>
+          <div class="form-control mt-6">
+            <!-- <button class="btn btn-primary">Login</button> -->
+            <button class="btn btn-primary" type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
