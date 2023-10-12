@@ -13,18 +13,22 @@
 
 <body>
     <th:object="${currentUser}" />
-    <h1 align="center">Account Details</h1>
+    <h1 align="center">Dashboard</h1>
     <a href="/logout">Logout</a>
+<!--    Saying hi-->
+    <h2 th:text="'Hi '+${currentUser.firstName}+' '+${currentUser.lastName}+'!'"></h2>
     <table align="center">
         <tr align="center">
-            <th>Username</th>
+            <th>Last Spent</th>
             <th>Current Balance</th>
-            <th>Password</th>
+            <th>In this Week</th>
+            <th>In this Month</th>
         </tr>
         <tr align="center">
-            <td th:text="${currentUser.username}"></td>
+            <td th:text="${currentUser.account.lastSpent}"></td>
             <td th:text="${currentUser.account.currentBalance}"></td>
-            <td th:text="${currentUser.userPassword}"></td>
+            <td th:text="${currentUser.account.weeklySpent}"></td>
+            <td th:text="${currentUser.account.monthlySpent}"></td>
         </tr>
     </table>
     <a href="/deposit">Deposit</a>
