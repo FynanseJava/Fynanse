@@ -17,6 +17,8 @@ public class Account {
     @Column(columnDefinition = "DECIMAL(10,2) DEFAULT 0.0")
     private double currentBalance;
     @Column(columnDefinition = "DECIMAL(10,2) DEFAULT 0.0")
+    private double initialBalance;
+    @Column(columnDefinition = "DECIMAL(10,2) DEFAULT 0.0")
     private double lastSpent;
     @Column(columnDefinition = "DECIMAL(10,2) DEFAULT 0.0")
     private double weeklySpent;
