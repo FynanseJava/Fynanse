@@ -5,7 +5,6 @@ import com.fynanse.Fynanse.api.models.User;
 import com.fynanse.Fynanse.api.repositories.AccountRepository;
 import com.fynanse.Fynanse.api.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.AutoConfigureOrder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.fynanse</groupId>
 	<artifactId>Fynanse</artifactId>
-	<version>Pre-release_0.4.0</version>
+	<version>Pre-release_0.14.5</version>
 	<name>Fynanse</name>
 	<description>Personal finance management on the web using spring boot</description>
 	<properties>
