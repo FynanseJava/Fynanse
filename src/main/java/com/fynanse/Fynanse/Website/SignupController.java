@@ -30,6 +30,7 @@ public class SignupController {
     public String addUser(@ModelAttribute("user") User user, @ModelAttribute("startingBalance") double amount){
         Account newAccount = new Account();
         newAccount.setCurrentBalance(amount);
+        newAccount.setInitialBalance(amount);
         user.setAccount(newAccount);
         accountRepository.save(newAccount);
         userService.addUser(user);
