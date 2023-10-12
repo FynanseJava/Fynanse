@@ -18,17 +18,17 @@ import java.util.Optional;
 public class UpdateAmountController {
     @Autowired
     private UserService userService;
-    static boolean isWithdrawing;
+    static boolean isSpending;
     @GetMapping(value={"/deposit", "/withdraw"})
     public String showUpdatePage(Model model, HttpServletRequest request){
         String uri = request.getRequestURI();
         if(uri.equals("/deposit")){
             model.addAttribute("updateTitle", "Deposit Amount");
-            isWithdrawing = false;
+            isSpending = false;
         }
         else if(uri.equals("/withdraw")){
             model.addAttribute("updateTitle", "Withdraw Amount");
-            isWithdrawing = true;
+            isSpending = true;
         }
         return "updateBalance";
     }
@@ -37,8 +37,11 @@ public class UpdateAmountController {
         Optional<User> currentUser = userService.getCurrentUser();
         if(currentUser.isPresent()){
             Account currentUserAccount = userService.getAccount(currentUser.get().getUsername());
-            if(isWithdrawing){
+            if(isSpending){
                 currentUserAccount.setCurrentBalance(currentUserAccount.getCurrentBalance() - amount);
+                currentUserAccount.setLastSpent(amount);
+                currentUserAccount.setWeeklySpent(currentUserAccount.getWeeklySpent()+amount);
+                currentUserAccount.setMonthlySpent(currentUserAccount.getMonthlySpent()+amount);
                 userService.saveAccountInfo(currentUserAccount);
             }
             else{

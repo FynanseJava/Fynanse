@@ -3,6 +3,12 @@
 
 #idea folder
 .idea/*
+
+#Vscode
+.vscode/*
+
+#File Database
+.database/*
 *.iws
 workspace.xml
 tasks.xml
