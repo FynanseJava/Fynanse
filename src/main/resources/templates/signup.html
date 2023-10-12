@@ -10,12 +10,21 @@
 <body>
     <h1>Sign Up</h1>
   <form th:action="@{/signUpFormHanlde}" th:method="POST" th:object="${user}">
+<!--      username-->
       <label for="username">Username: </label>
-    <input type="text" th:field="*{username}" name="username" placeholder="Username">
+          <input type="text" th:field="*{username}" name="username" placeholder="Username">
+<!--      First Name-->
+      <label for="firstName">First Name: </label>
+          <input type="text" th:field="*{firstName}" name="firstName" placeholder="First Name">
+<!--      Last Name-->
+      <label for="lastName">Last Name: </label>
+          <input type="text" th:field="*{lastName}" name="lastName" placeholder="Last Name">
+<!--      Password-->
       <label for="userPassword">Password: </label>
-    <input type="password" th:field="*{userPassword}" name="userPassword" placeholder="Password">
+          <input type="password" th:field="*{userPassword}" name="userPassword" placeholder="Password">
+<!--      Starting Balance-->
       <label for="startingBalance">Starting Balance: </label>
-      <input type="number" th:object="${startingBalance}" name="startingBalance" placeholder="Starting Balance">
+          <input type="number" th:object="${startingBalance}" name="startingBalance" placeholder="Starting Balance">
     <button type="submit">Submit</button>
   </form>
 </body>
