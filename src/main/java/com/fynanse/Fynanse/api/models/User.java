@@ -17,6 +17,8 @@ public class User {
     @Column(nullable = false, unique = true)
     private String username;
     private String userPassword;
+    private String firstName;
+    private String lastName;
     @Column(columnDefinition = "boolean default false")
     public Boolean loggedIn = false;
     @ManyToOne
