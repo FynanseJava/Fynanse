@@ -9,24 +9,15 @@
 </head>
 <body>
     <h1 class="text-3xl text-center">Sign Up</h1>
-  <form th:action="@{/signUpFormHanlde}" th:method="POST" th:object="${user}">
-<!--      username-->
+  <!-- <form th:action="@{/signUpFormHanlde}" th:method="POST" th:object="${user}">
       <label for="username">Username: </label>
-          <input type="text" th:field="*{username}" name="username" placeholder="Username">
-<!--      First Name-->
-      <label for="firstName">First Name: </label>
-          <input type="text" th:field="*{firstName}" name="firstName" placeholder="First Name">
-<!--      Last Name-->
-      <label for="lastName">Last Name: </label>
-          <input type="text" th:field="*{lastName}" name="lastName" placeholder="Last Name">
-<!--      Password-->
+    <input type="text" th:field="*{username}" name="username" placeholder="Username">
       <label for="userPassword">Password: </label>
-          <input type="password" th:field="*{userPassword}" name="userPassword" placeholder="Password">
-<!--      Starting Balance-->
+    <input type="password" th:field="*{userPassword}" name="userPassword" placeholder="Password">
       <label for="startingBalance">Starting Balance: </label>
-          <input type="number" th:object="${startingBalance}" name="startingBalance" placeholder="Starting Balance">
+      <input type="number" th:object="${startingBalance}" name="startingBalance" placeholder="Starting Balance">
     <button type="submit">Submit</button>
-  </form>
+  </form> -->
 
   <!-- trying the new part here -->
   <div class="hero min-h-screen bg-base-200">
