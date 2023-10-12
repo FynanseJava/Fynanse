@@ -3,20 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.2/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Login</title>
 </head>
-<body>
-    <h1>Login</h1>
-    <a href="/signup">Register</a>
-    <div class="loginForm">
-        <form th:action="@{/loginFormHandle}" th:object="${inputUser}" method="POST">
-            <label for="username">Username: </label>
-            <input type="text" th:field="*{username}" name="username" placeholder="Username">
-            <label for="userPassword">Password: </label>
-            <input type="password" th:field="*{userPassword}" name="userPassword" placeholder="Password">
-            <button type="submit">Submit</button>
-        </form>
-
+<body class="flex justify-center items-center h-screen bg-blue-300 text-black">
+    <div class="bg-white">
+        <h1 class="">Login</h1>
+        <a href="/signup">Register</a>
+        <div class="loginForm">
+            <form th:action="@{/loginFormHandle}" th:object="${inputUser}" method="POST">
+                <label for="username">Username: </label>
+                <input type="text" th:field="*{username}" name="username" placeholder="Username">
+                <label for="userPassword">Password: </label>
+                <input type="password" th:field="*{userPassword}" name="userPassword" placeholder="Password">
+                <button type="submit">Submit</button>
+            </form>
+    
+        </div>
     </div>
 </body>
 </html>
