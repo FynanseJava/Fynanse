@@ -46,7 +46,7 @@ public class UpdateAmountController {
             }
             else{
                 currentUserAccount.setCurrentBalance(currentUserAccount.getCurrentBalance() + amount);
-                currentUserAccount.setCurrentBalance(currentUserAccount.getInitialBalance() + amount);
+                currentUserAccount.setInitialBalance(currentUserAccount.getInitialBalance() + amount);
                 userService.saveAccountInfo(currentUserAccount);
             }
         }
