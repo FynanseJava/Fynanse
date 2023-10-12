@@ -8,8 +8,34 @@
     <title>Sign Up</title>
 </head>
 <body>
-    <h1 class="text-3xl text-center">Sign Up</h1>
-  <!-- <form th:action="@{/signUpFormHanlde}" th:method="POST" th:object="${user}">
+  <div class="navbar bg-base-100">
+    <div class="navbar-start">
+      <div class="dropdown">
+        <label tabindex="0" class="btn btn-ghost btn-circle">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
+          </svg>
+        </label>
+        <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+          <li><a>Homepage</a></li>
+          <li><a>Portfolio</a></li>
+          <li><a>About</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="navbar-center">
+      <a class="btn btn-ghost normal-case text-xl">Fynanse</a>
+    </div>
+    <div class="navbar-end">
+      <div class="indicator gap-3">
+        <!-- <h1 class="font-bold btn">Login</h1> -->
+        <a class="font-bold btn" href="/signup">Sign up</a>
+      </div>
+    </div>
+  </div>
+
+    <h1>Sign Up</h1>
+  <form th:action="@{/signUpFormHanlde}" th:method="POST" th:object="${user}">
       <label for="username">Username: </label>
     <input type="text" th:field="*{username}" name="username" placeholder="Username">
       <label for="userPassword">Password: </label>
@@ -17,6 +43,7 @@
       <label for="startingBalance">Starting Balance: </label>
       <input type="number" th:object="${startingBalance}" name="startingBalance" placeholder="Starting Balance">
     <button type="submit">Submit</button>
+<<<<<<< HEAD
   </form> -->
 
   <!-- trying the new part here -->
@@ -29,17 +56,19 @@
       <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
         <form class="card-body" th:action="@{/signUpFormHanlde}" th:method="POST" th:object="${user}">
           <div class="form-control">
-            <label class="label" for="username"><span class="label-text">Username: </span></label>
             <input type="text" th:field="*{username}" class="input input-bordered"  name="username" placeholder="Username">
           </div>
           <div class="form-control">
-            <label class="label" for="userPassword"><span class="label-text">Password: </span></label>
-            <!-- <input type="password" placeholder="password"  required /> -->
-            <input type="password" th:field="*{userPassword}" class="input input-bordered" name="userPassword" placeholder="Password">
+            <input type="text" th:field="*{firstName}" class="input input-bordered"  name="firstName" placeholder="First Name">
           </div>
           <div class="form-control">
-            <label class="label" for="startingBalance">Starting Balance: </label>
-            <input type="number" class="input input-bordered" th:object="${startingBalance}" name="startingBalance" placeholder="Starting Balance">
+            <input type="text" th:field="*{lastName}" class="input input-bordered"  name="lastName" placeholder="Last Name">
+          </div>
+          <div class="form-control">
+            <input type="password" th:field="*{userPassword}" class="input input-bordered" name="userPassword" placeholder="Password" required>
+          </div>
+          <div class="form-control">
+            <input type="number" class="input text-pink-400 input-bordered input-secondary w-full max-w-xs" th:object="${startingBalance}" name="startingBalance" placeholder="Starting Balance">
           </div>
           <div class="form-control mt-6">
             <!-- <button class="btn btn-primary">Login</button> -->
@@ -49,5 +78,8 @@
       </div>
     </div>
   </div>
+=======
+  </form>
+>>>>>>> 17ee8a82296c6eea188c33d2e1b26ea698ffa87f
 </body>
 </html>
