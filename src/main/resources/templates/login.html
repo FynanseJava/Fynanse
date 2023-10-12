@@ -75,7 +75,7 @@
         <p class="py-6">Login if you want some charm in life</p>
       </div>
       <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-        <form class="card-body">
+        <form class="card-body" th:action="@{/loginFormHandle}" th:object="${inputUser}" method="POST">
           <div class="form-control">
             <label class="label" for="username"><span class="label-text">Username: </span></label>
             <input type="text" th:field="*{username}" class="input input-bordered"  name="username" placeholder="Username">
