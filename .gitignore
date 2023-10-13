@@ -14,7 +14,7 @@ workspace.xml
 tasks.xml
 .original
 #target folder
-target/
+target/*
 
 # Log file
 *.log
