@@ -35,4 +35,9 @@ public class LoginController {
             return "redirect:/login";
         }
     }
+
+    @GetMapping("/error")
+    public String showErrorPage(){
+        return "error";
+    }
 }
