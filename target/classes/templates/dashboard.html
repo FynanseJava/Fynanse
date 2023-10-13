@@ -28,7 +28,7 @@
 <!--    You Are Free to remove the strings. Not the variables-->
 <!--    Ami just testing er jonno string gula concatenate korsi. Tumi tomar design onyjayee-->
 <!--    ogula soriye dite paro chaile-->
-    <span th:text="'Last Spent: '+${lastSpent}+' tk'"></span>
+    <!-- <span th:text="'Last Spent: '+${lastSpent}+' tk'"></span>
     <br>
     <span th:text="'Current Balance: '+${currentBalance+' tk'}"></span>
     <br>
@@ -39,17 +39,17 @@
     <span th:text="'Days remaining till next month: '+${daysRemaining}+'days'"></span>
     <br>
     <span th:text="'Remaining: '+${remainingBalancePercentage}+'%'"></span>
-    <br>
+    <br> -->
 
-    <div class="stats shadow">
+    <div class="stats shadow-2xl border flex mx-28 mb-0">
   
         <div class="stat">
           <div class="stat-figure text-secondary">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-8 h-8 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
           </div>
           <div class="stat-title">Last Spent:</div>
-          <span th:text="'Last Spent: '+${lastSpent}+' tk'"></span>
-          <div class="stat-value">31K</div>
+          <span class="stat-value" th:text="'Last Spent: '+${lastSpent}+' tk'"></span>
+          <!-- <div class="stat-value">31K</div> -->
           <div class="stat-desc">Jan 1st - Feb 1st</div>
         </div>
         
@@ -58,8 +58,8 @@
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-8 h-8 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
           </div>
           <div class="stat-title">Current Balance:</div>
-          <span th:text="'Current Balance: '+${currentBalance+' tk'}"></span>
-          <div class="stat-value">4,200</div>
+          <span class="stat-value" th:text="'Current Balance: '+${currentBalance+' tk'}"></span>
+          <!-- <div class="stat-value">4,200</div> -->
           <div class="stat-desc">↗︎ 400 (22%)</div>
         </div>
         
@@ -68,13 +68,46 @@
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-8 h-8 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg>
           </div>
           <div class="stat-title">This week: </div>
-          <span th:text="'This week: '+${spentLastWeek}+' tk'"></span>
-          <div class="stat-value">1,200</div>
+          <span class="stat-value" th:text="'This week: '+${spentLastWeek}+' tk'"></span>
+          <!-- <div class="stat-value">1,200</div> -->
           <div class="stat-desc">↘︎ 90 (14%)</div>
         </div>
         
       </div>
-    <br>
+    
+    <div class="stats shadow-2xl border flex mx-28 my-5">
+  
+        <div class="stat">
+          <div class="stat-figure text-secondary">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-8 h-8 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          </div>
+          <div class="stat-title">This month:</div>
+          <span class="stat-value" th:text="'This month: '+${spentLastMonth}+' tk'"></span>
+          <!-- <div class="stat-value">31K</div> -->
+          <div class="stat-desc">Jan 1st - Feb 1st</div>
+        </div>
+        
+        <div class="stat">
+          <div class="stat-figure text-secondary">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-8 h-8 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
+          </div>
+          <div class="stat-title">Days remaining till next month:</div>
+          <span class="stat-value" th:text="'Days remaining till next month: '+${daysRemaining}+'days'"></span>
+          <!-- <div class="stat-value">4,200</div> -->
+          <div class="stat-desc">↗︎ 400 (22%)</div>
+        </div>
+        
+        <div class="stat">
+          <div class="stat-figure text-secondary">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-8 h-8 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg>
+          </div>
+          <div class="stat-title">Remaining: </div>
+          <span class="stat-value" th:text="'Remaining: '+${remainingBalancePercentage}+'%'"></span>
+          <!-- <div class="stat-value">1,200</div> -->
+          <div class="stat-desc">↘︎ 90 (14%)</div>
+        </div>
+        
+      </div>
     <a href="/deposit">Deposit</a>
     <br>
     <a href="/withdraw">Withdraw</a>
