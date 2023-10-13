@@ -37,15 +37,16 @@
       </div>
     </div>
   </div>
-
+  <h1 class="font-bold text-lg text-center"><p>
+        Hi <span th:text="${firstName}"></span> <span th:text="${lastName}"></span>
+    </p></h1>
+    
     <th:object="${currentUser}" />
     <!-- <h1 align="center">Dashboard</h1> -->
-    <a href="/logout">Logout</a>
+    <!-- <a href="/logout">Logout</a> -->
 <!--    Saying hi-->
 <!--    You can style the saying hi stuff as well. Just copy the firstname and lastname spans anywhere in your code-->
-    <p>
-        Hi <span th:text="${firstName}"></span> <span th:text="${lastName}"></span>
-    </p>
+    
 
 <!--    You can use these span tags anywhere in your design and model dashboard accordingly-->
 <!--    the ${...} are the variables coming from the backend.-->
