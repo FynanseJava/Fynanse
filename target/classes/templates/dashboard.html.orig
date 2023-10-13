@@ -75,7 +75,17 @@
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-8 h-8 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
           </div>
           <div class="stat-title">Last Spent:</div>
-          <span class="stat-value" th:text="${#numbers.formatDecimal(lastSpent, 0, 0, 'POINT')+' tk'}"></span>
+<<<<<<< HEAD
+          <span class="stat-value" th:text="${#numbers.formatDecimal(lastSpent, 3, 0, 'POINT')+' tk'}"></span>
+||||||| 45fa507
+<<<<<<< HEAD
+          <span class="stat-value" th:text="${#numbers.formatDecimal(lastSpent, 3, 0, 'POINT')+' tk'}"></span>
+=======
+          <span class="stat-value" th:text="${#numbers.formatCurrency(lastSpent, 0, .)}"></span>
+>>>>>>> b1e901ea0c8bf4306d53f3c383fa0343defc5671
+=======
+          <span class="stat-value" th:text="${#numbers.formatCurrency(lastSpent, 0, .)}"></span>
+>>>>>>> 693e0185313be6e49847e7fe0e0ad6802de4611b
 <!--          <div class="stat-value">31K</div>-->
           <div class="stat-desc text-[#3FB950]">Jan 1st - Feb 1st</div>
         </div>
@@ -85,7 +95,17 @@
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-8 h-8 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
           </div>
           <div class="stat-title">Current Balance:</div>
-          <span class="stat-value" th:text="${#numbers.formatDecimal(currentBalance, 3, 0, 'POINT')+' tk'}"></span>
+<<<<<<< HEAD
+          <span class="stat-value" th:text="${#numbers.formatDecimal(currentBalance, 3, 1, 'POINT')+' tk'}"></span>
+||||||| 45fa507
+<<<<<<< HEAD
+          <span class="stat-value" th:text="${#numbers.formatDecimal(currentBalance, 3, 1, 'POINT')+' tk'}"></span>
+=======
+          <span class="stat-value" th:text="${#numbers.formatCurrency(currentBalance), 1, .}"></span>
+>>>>>>> b1e901ea0c8bf4306d53f3c383fa0343defc5671
+=======
+          <span class="stat-value" th:text="${#numbers.formatCurrency(currentBalance), 1, .}"></span>
+>>>>>>> 693e0185313be6e49847e7fe0e0ad6802de4611b
 <!--          <div class="stat-value">4,200</div>-->
           <div class="stat-desc text-[#3FB950]">↗︎ 400 (22%)</div>
         </div>
@@ -95,7 +115,17 @@
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-8 h-8 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg>
           </div>
           <div class="stat-title">This week: </div>
+<<<<<<< HEAD
           <span class="stat-value" th:text="${#numbers.formatDecimal(spentLastWeek, 2, 0, 'POINT')+' tk'}"></span>
+||||||| f3b09bb
+<<<<<<< HEAD
+          <span class="stat-value" th:text="${#numbers.formatDecimal(spentLastWeek, 2, 0, 'POINT')+' tk'}"></span>
+=======
+          <span class="stat-value" th:text="${#numbers.formatCurrency(spentLastWeek, 0, .)}"></span>
+>>>>>>> b1e901ea0c8bf4306d53f3c383fa0343defc5671
+=======
+          <span class="stat-value" th:text="${#numbers.formatCurrency(spentLastWeek, 0, .)}"></span>
+>>>>>>> 45fa50735ec9b49ce8548c3126395d4249d037f0
 <!--          <div class="stat-value">1,200</div>-->
           <div class="stat-desc text-[#3FB950]">↘︎ 90 (14%)</div>
         </div>
@@ -108,7 +138,17 @@
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-8 h-8 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
           </div>
           <div class="stat-title">This month:</div>
+<<<<<<< HEAD
           <span class="stat-value" th:text="${#numbers.formatDecimal(spentLastMonth, 3, 0, 'POINT')+' tk'}"></span>
+||||||| 45fa507
+<<<<<<< HEAD
+          <span class="stat-value" th:text="${#numbers.formatDecimal(spentLastMonth, 3, 0, 'POINT')+' tk'}"></span>
+=======
+          <span class="stat-value" th:text="${#numbers.formatCurrency(spentLastMonth, 0, .)}"></span>
+>>>>>>> b1e901ea0c8bf4306d53f3c383fa0343defc5671
+=======
+          <span class="stat-value" th:text="${#numbers.formatCurrency(spentLastMonth, 0, .)}"></span>
+>>>>>>> 693e0185313be6e49847e7fe0e0ad6802de4611b
 <!--          <div class="stat-value">31K</div>-->
           <div class="stat-desc text-[#3FB950]">Jan 1st - Feb 1st</div>
         </div>
@@ -128,7 +168,17 @@
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-8 h-8 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg>
           </div>
           <div class="stat-title">Remaining: </div>
+<<<<<<< HEAD
           <span class="stat-value" th:text="${#numbers.formatDecimal(remainingBalancePercentage, 2, 1, 'POINT')}+'%'"></span>
+||||||| 45fa507
+<<<<<<< HEAD
+          <span class="stat-value" th:text="${#numbers.formatDecimal(remainingBalancePercentage, 2, 1, 'POINT')}+'%'"></span>
+=======
+          <span class="stat-value" th:text="${#numbers.formatCurrency(remainingBalancePercentage, 1, .)}+'%'"></span>
+>>>>>>> b1e901ea0c8bf4306d53f3c383fa0343defc5671
+=======
+          <span class="stat-value" th:text="${#numbers.formatCurrency(remainingBalancePercentage, 1, .)}+'%'"></span>
+>>>>>>> 693e0185313be6e49847e7fe0e0ad6802de4611b
 <!--          <div class="stat-value">1,200</div>-->
           <div class="stat-desc text-[#3FB950]">↘︎ 90 (14%)</div>
         </div>
@@ -136,9 +186,9 @@
       </div>
       
     <div class="flex justify-center gap-5">
-        <a href="/deposit"><button class="btn bg-[#5616C6] w-36 h-14 text-xl font-bold text-white">Income</button></a>
+        <a href="/deposit"><button class="btn bg-[#5616C6] text-xl font-bold w-36 h-14 text-white">Income</button></a>
 
-        <a href="/withdraw"><button class="btn bg-[#D827A9] w-36 h-14 text-xl font-bold text-white">Spending</button></a>
+        <a href="/withdraw"><button class="btn bg-[#D827A9] text-xl font-bold w-36 h-14 text-white">Spending</button></a>
     </div>
 
     
