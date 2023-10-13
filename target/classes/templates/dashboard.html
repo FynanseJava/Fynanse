@@ -16,14 +16,24 @@
     <h1 align="center">Dashboard</h1>
     <a href="/logout">Logout</a>
 <!--    Saying hi-->
-    <h2 th:text="'Hi '+${firstName}+' '+${lastName}+'!'"></h2>
-<!--    you can convert the <p></p> tag to any tag you want and nest it within anything-->
-    <p th:text="${lastSpent}+' tk'"></p>
-    <p th:text="${currentBalance+' tk'}"></p>
-    <p th:text="${spentLastWeek}+' tk'"></p>
-    <p th:text="${spentLastMonth}+' tk'"></p>
-    <p th:text="${daysRemaining}+' days remaining till next month'"></p>
-    <p th:text="${remainingBalancePercentage}+'%'"></p>
+<!--    You can style the saying hi stuff as well. Just copy the firstname and lastname spans anywhere in your code-->
+    <p>
+        Hi<span th:text="${firstName}"></span> <span th:text="${lastName}"></span>
+    </p>
+
+<!--    You can use these span tags anywhere in your design and model dashboard accordingly-->
+    <span th:text="'Last Spent: '+${lastSpent}+' tk'"></span>
+    <br>
+    <span th:text="'Current Balance: '+${currentBalance+' tk'}"></span>
+    <br>
+    <span th:text="'This week: '+${spentLastWeek}+' tk'"></span>
+    <br>
+    <span th:text="'This month: '+${spentLastMonth}+' tk'"></span>
+    <br>
+    <span th:text="'Days remaining till next month: '+${daysRemaining}+'days'"></span>
+    <br>
+    <span th:text="'Remaining: '+${remainingBalancePercentage}+'%'"></span>
+    <br>
 
     <a href="/deposit">Deposit</a>
     <br>
