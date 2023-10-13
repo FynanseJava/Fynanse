@@ -8,7 +8,7 @@
     <title>Sign Up</title>
 </head>
 <body class="overflow-hidden">
-  <div class="navbar bg-base-100 shadow-lg">
+  <div class="navbar bg-base-100 shadow-xl">
     <div class="navbar-start">
       <div class="dropdown">
         <label tabindex="0" class="btn btn-ghost btn-circle">
@@ -17,7 +17,7 @@
           </svg>
         </label>
         <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-          <li><a>Dashboard</a></li>
+          <!-- <li><a>Dashboard</a></li> -->
           <li><a>Settings</a></li>
           <li><a>About</a></li>
         </ul>
@@ -43,7 +43,7 @@
         <h1 class="text-5xl font-bold">Login now!</h1>
         <p class="py-6">Login if you want some charm in life</p>
       </div> -->
-      <h1 class="font-bold text-xl">Sign Up Here!</h1>
+      <h1 class="font-bold text-lg">Sign Up Here!</h1>
       <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
         <form class="card-body" th:action="@{/signUpFormHanlde}" th:method="POST" th:object="${user}">
           <div class="form-control">
