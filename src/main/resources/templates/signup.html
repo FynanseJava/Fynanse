@@ -35,12 +35,15 @@
   </div>
 
   <!-- trying the new part here -->
-  <div class="hero min-h-screen bg-base-200 ">
-    <div class="hero-content flex-col lg:flex-row-reverse">
+  
+  <div class="hero min-h-screen bg-base-200">
+    
+    <div class="hero-content flex-col mb-36">
       <!-- <div class="text-center lg:text-left">
         <h1 class="text-5xl font-bold">Login now!</h1>
         <p class="py-6">Login if you want some charm in life</p>
       </div> -->
+      <h1 class="font-bold text-lg">Sign Up Here!</h1>
       <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
         <form class="card-body" th:action="@{/signUpFormHanlde}" th:method="POST" th:object="${user}">
           <div class="form-control">
@@ -55,16 +58,16 @@
           <div class="form-control">
             <input type="password" th:field="*{userPassword}" class="input input-bordered" name="userPassword" placeholder="Password" required>
           </div>
-          <div class="form-control">
+          <div class="form-control mb-3">
             <!-- <input type="number" class="input text-purple-500 input-bordered " th:object="${startingBalance}" name="startingBalance" placeholder="Starting Balance"> -->
             <label class="input-group overflow-hidden">
               <input type="number" class="input input-bordered overflow-hidden" th:object="${startingBalance}" name="startingBalance" placeholder="Starting Balance" oninput="validateInput(this)"/>
               <span>BDT</span>
             </label>
           </div>
-          <div class="form-control mt-6">
+          <div class="form-control">
             <!-- <button class="btn btn-primary">Login</button> -->
-            <button class="btn btn-primary" type="submit">Submit</button>
+            <button class="btn btn-primary box-border border-2" type="submit">Submit</button>
           </div>
         </form>
       </div>
