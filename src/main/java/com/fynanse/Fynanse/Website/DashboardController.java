@@ -9,6 +9,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.*;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 
 @Controller
 public class DashboardController {
@@ -36,13 +38,11 @@ public class DashboardController {
         model.addAttribute("spentLastWeek", account.getWeeklySpent());
         model.addAttribute("spentLastMonth", account.getMonthlySpent());
 
-        Calendar today = Calendar.getInstance();
-        // Get the first day of the next month.
-        Calendar firstDayOfNextMonth = Calendar.getInstance();
-        firstDayOfNextMonth.set(firstDayOfNextMonth.get(Calendar.YEAR), firstDayOfNextMonth.get(Calendar.MONTH) + 1, 1);
-        // Calculate the difference between the current date and the first day of the next month.
-        long daysRemaining = today.get(Calendar.DAY_OF_MONTH) - firstDayOfNextMonth.get(Calendar.DAY_OF_MONTH);
-        //TODO: days remaining is outputing wrong info. Need to fix that
+		LocalDate today = LocalDate.now();
+        LocalDate firstDayOfMonth = today.withDayOfMonth(1);
+        LocalDate lastDayOfMonth = firstDayOfMonth.plusMonths(1).minusDays(1);
+
+        long daysRemaining = ChronoUnit.DAYS.between(today, lastDayOfMonth);
 
         model.addAttribute("daysRemaining", daysRemaining);
         double percentage = (account.getCurrentBalance() / account.getInitialBalance())*100;
