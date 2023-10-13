@@ -12,14 +12,41 @@
 </head>
 
 <body>
+  <div class="navbar bg-base-100 shadow-lg">
+    <div class="navbar-start">
+      <div class="dropdown">
+        <label tabindex="0" class="btn btn-ghost btn-circle">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
+          </svg>
+        </label>
+        <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+          <!-- <li><a>Dashboard</a></li> -->
+          <li><a>Settings</a></li>
+          <li><a>About</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="navbar-center">
+      <a class="btn btn-ghost normal-case text-2xl">Dashboard</a>
+    </div>
+    <div class="navbar-end">
+      <div class="indicator gap-3">
+        <!-- <h1 class="font-bold btn">Login</h1> -->
+         <a href="/login" class="font-bold btn-outline btn btn-secondary">logout</a> 
+      </div>
+    </div>
+  </div>
+  <h1 class="font-bold text-lg text-center"><p>
+        Hi <span th:text="${firstName}"></span> <span th:text="${lastName}"></span>
+    </p></h1>
+    
     <th:object="${currentUser}" />
-    <h1 align="center">Dashboard</h1>
-    <a href="/logout">Logout</a>
+    <!-- <h1 align="center">Dashboard</h1> -->
+    <!-- <a href="/logout">Logout</a> -->
 <!--    Saying hi-->
 <!--    You can style the saying hi stuff as well. Just copy the firstname and lastname spans anywhere in your code-->
-    <p>
-        Hi <span th:text="${firstName}"></span> <span th:text="${lastName}"></span>
-    </p>
+    
 
 <!--    You can use these span tags anywhere in your design and model dashboard accordingly-->
 <!--    the ${...} are the variables coming from the backend.-->
@@ -109,9 +136,9 @@
       </div>
       
     <div class="flex justify-center gap-5">
-        <a href="/deposit"><button class="btn bg-[#5616C6] h-14 w-36 text-xl font-bold text-white">Income</button></a>
+        <a href="/deposit"><button class="btn bg-[#5616C6] text-white">+</button></a>
 
-        <a href="/withdraw"><button class="btn bg-[#D827A9] h-14 w-36 text-xl font-bold text-white">Spending</button></a>
+        <a href="/withdraw"><button class="btn bg-[#D827A9] text-white">-</button></a>
     </div>
 
     
