@@ -48,9 +48,9 @@
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-8 h-8 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
           </div>
           <div class="stat-title">Last Spent:</div>
-          <span class="stat-value" th:text="+${lastSpent}"></span>
+          <span class="stat-value" th:text="+${lastSpent}+' tk'"></span>
           <div class="stat-value">31K</div>
-          <div class="stat-desc">Jan 1st - Feb 1st</div>
+          <div class="stat-desc text-[#3FB950]">Jan 1st - Feb 1st</div>
         </div>
         
         <div class="stat">
@@ -60,7 +60,7 @@
           <div class="stat-title">Current Balance:</div>
           <span class="stat-value" th:text="'Current Balance: '+${currentBalance+' tk'}"></span>
           <div class="stat-value">4,200</div>
-          <div class="stat-desc">↗︎ 400 (22%)</div>
+          <div class="stat-desc text-[#3FB950]">↗︎ 400 (22%)</div>
         </div>
         
         <div class="stat">
@@ -68,9 +68,9 @@
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-8 h-8 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg>
           </div>
           <div class="stat-title">This week: </div>
-          <span class="stat-value" th:text="'This week: '+${spentLastWeek}+' tk'"></span>
+          <span class="stat-value" th:text="${spentLastWeek}+' tk'"></span>
           <div class="stat-value">1,200</div>
-          <div class="stat-desc">↘︎ 90 (14%)</div>
+          <div class="stat-desc text-[#3FB950]">↘︎ 90 (14%)</div>
         </div>
         
       </div>
@@ -81,9 +81,9 @@
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-8 h-8 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
           </div>
           <div class="stat-title">This month:</div>
-          <span class="stat-value" th:text="'This month: '+${spentLastMonth}+' tk'"></span>
+          <span class="stat-value" th:text="${spentLastMonth}+' tk'"></span>
           <div class="stat-value">31K</div>
-          <div class="stat-desc">Jan 1st - Feb 1st</div>
+          <div class="stat-desc text-[#3FB950]">Jan 1st - Feb 1st</div>
         </div>
         
         <div class="stat">
@@ -93,7 +93,7 @@
           <div class="stat-title">Days remaining till next month:</div>
           <span class="stat-value" th:text="'Days remaining till next month: '+${daysRemaining}+'days'"></span>
           <div class="stat-value">4,200</div>
-          <div class="stat-desc">↗︎ 400 (22%)</div>
+          <div class="stat-desc text-[#3FB950]">↗︎ 400 (22%)</div>
         </div>
         
         <div class="stat">
@@ -103,7 +103,7 @@
           <div class="stat-title">Remaining: </div>
           <span class="stat-value" th:text="'Remaining: '+${remainingBalancePercentage}+'%'"></span>
           <div class="stat-value">1,200</div>
-          <div class="stat-desc">↘︎ 90 (14%)</div>
+          <div class="stat-desc text-[#3FB950]">↘︎ 90 (14%)</div>
         </div>
         
       </div>
