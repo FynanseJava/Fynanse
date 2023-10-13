@@ -31,7 +31,6 @@
       			<url>https://maven.pkg.github.com/FynanseJava/fynanse</url>
     		</repository>
   	</distributionManagement>
-</project>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
