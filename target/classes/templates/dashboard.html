@@ -95,7 +95,17 @@
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-8 h-8 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg>
           </div>
           <div class="stat-title">This week: </div>
+<<<<<<< HEAD
           <span class="stat-value" th:text="${#numbers.formatDecimal(spentLastWeek, 2, 0, 'POINT')+' tk'}"></span>
+||||||| f3b09bb
+<<<<<<< HEAD
+          <span class="stat-value" th:text="${#numbers.formatDecimal(spentLastWeek, 2, 0, 'POINT')+' tk'}"></span>
+=======
+          <span class="stat-value" th:text="${#numbers.formatCurrency(spentLastWeek, 0, .)}"></span>
+>>>>>>> b1e901ea0c8bf4306d53f3c383fa0343defc5671
+=======
+          <span class="stat-value" th:text="${#numbers.formatCurrency(spentLastWeek, 0, .)}"></span>
+>>>>>>> 45fa50735ec9b49ce8548c3126395d4249d037f0
 <!--          <div class="stat-value">1,200</div>-->
           <div class="stat-desc text-[#3FB950]">↘︎ 90 (14%)</div>
         </div>
