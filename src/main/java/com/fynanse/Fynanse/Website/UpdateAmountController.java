@@ -33,8 +33,8 @@ public class UpdateAmountController {
         return "updateBalance";
     }
     @RequestMapping(value = "/updateAmount", method = RequestMethod.POST)
-    public String updateCurrentAmount(@ModelAttribute("amount") double amount, Model model){
-        Optional<User> currentUser = userService.getCurrentUser();
+    public String updateCurrentAmount(@ModelAttribute("amount") double amount, Model model, HttpServletRequest request){
+        Optional<User> currentUser = userService.getCurrentUser(request);
         if(currentUser.isPresent()){
             Account currentUserAccount = userService.getAccount(currentUser.get().getUsername());
             if(isSpending){
