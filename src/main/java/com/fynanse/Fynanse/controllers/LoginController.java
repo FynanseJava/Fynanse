@@ -15,11 +15,6 @@ import java.util.Optional;
 public class LoginController {
     @Autowired
     private UserService userService;
-    @GetMapping("/login")
-    public String showLoginPage() {
-        return "login";
-    }
-
     @RequestMapping(path="/loginFormHandle", method = RequestMethod.POST)
     public String loginFormHandle(@ModelAttribute("username") String inputUsername, @ModelAttribute("userPassword") String inputPassword, HttpServletRequest request) {
         //validating the user manually because that's totally safe to do :)
@@ -34,10 +29,5 @@ public class LoginController {
         } else {
             return "redirect:/login";
         }
-    }
-
-    @GetMapping("/error")
-    public String showErrorPage(){
-        return "error";
     }
 }
