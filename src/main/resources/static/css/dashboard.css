@@ -1,0 +1,10 @@
+.hexagon {
+    width: 250px;
+    height: 250px;
+    position: relative;
+    background-color: #5616C6; /* Dark background color */
+    border: 5px solid #5616C6; /* Whitish border color */
+  
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  }
+  
