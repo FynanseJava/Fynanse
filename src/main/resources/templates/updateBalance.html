@@ -36,6 +36,7 @@
 
   <h1 th:text="${updateTitle}"></h1>
     <p>Amount</p>
+<!--     <p th:if="${spendAmount < 0}">You can not withdraw more than you have available</p>-->
     <div>
         <form th:action="@{/updateAmount}" th:method="POST">
             <input type="number" name="amount" th:object="${amount}" th:placeholder="${updateTitle}">
