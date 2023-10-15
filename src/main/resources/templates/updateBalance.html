@@ -38,8 +38,7 @@
     <p>Amount</p>
 <!--     this is show the user an error when user is trying to withdraw more than what they have-->
 <!--     style this however you want.-->
-<!--     you can even change the th:text to change what error message it should show-->
-     <p th:if="${spendAmount < 0}" th:text="You can not withdraw more than you have available"></p>
+     <p th:if="${errorMessage != null}" th:text="${errorMessage}"></p>
     <div>
         <form th:action="@{/updateAmount}" th:method="POST">
             <input type="number" name="amount" th:object="${amount}" th:placeholder="${updateTitle}">

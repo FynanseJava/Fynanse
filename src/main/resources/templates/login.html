@@ -64,6 +64,15 @@
             <button class="btn btn-primary" type="submit">Submit</button>
           </div>
         </form>
+<!--        these are dynamic messages. Like showing the user messages depending on what error it was-->
+<!--        style these as well-->
+        <div class="errors">
+          <div th:if="${USERNAME_NOT_FOUND != null}">
+            <span th:text="${USERNAME_NOT_FOUND}"></span>
+            <a href="/signup">sign up?</a>
+          </div>
+          <p th:if="${PASSWORD_INCORRECT!= null}" th:text="${PASSWORD_INCORRECT}"></p>
+        </div>
       </div>
     </div>
   </div>
