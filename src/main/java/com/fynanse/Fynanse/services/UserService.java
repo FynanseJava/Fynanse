@@ -1,9 +1,9 @@
-package com.fynanse.Fynanse.api.services;
+package com.fynanse.Fynanse.services;
 
-import com.fynanse.Fynanse.api.models.Account;
-import com.fynanse.Fynanse.api.repositories.AccountRepository;
-import com.fynanse.Fynanse.api.repositories.UserRepository;
-import com.fynanse.Fynanse.api.models.User;
+import com.fynanse.Fynanse.models.Account;
+import com.fynanse.Fynanse.repositories.AccountRepository;
+import com.fynanse.Fynanse.repositories.UserRepository;
+import com.fynanse.Fynanse.models.User;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
