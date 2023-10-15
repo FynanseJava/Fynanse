@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import java.util.Optional;
 
 @Controller
 public class SignupController {
@@ -26,7 +29,13 @@ public class SignupController {
         return "signup";
     }
     @RequestMapping(path = "/signUpFormHanlde", method = RequestMethod.POST)
-    public String addUser(@ModelAttribute("user") User user, @ModelAttribute("startingBalance") double amount){
+    public String addUser(@ModelAttribute("user") User user, @ModelAttribute("startingBalance") double amount, RedirectAttributes redirectAttributes){
+        Optional<User> u = userService.getUserById(user.getUsername());
+        if(u.isPresent()){
+            String msg = "Username already taken. Please try another username.";
+            redirectAttributes.addFlashAttribute("USERNAME_EXISTS", msg);
+            return "redirect:/signup";
+        }
         Account newAccount = new Account();
         newAccount.setCurrentBalance(amount);
         newAccount.setInitialBalance(amount);
