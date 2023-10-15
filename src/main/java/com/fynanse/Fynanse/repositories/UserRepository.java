@@ -1,6 +1,6 @@
-package com.fynanse.Fynanse.api.repositories;
+package com.fynanse.Fynanse.repositories;
 
-import com.fynanse.Fynanse.api.models.User;
+import com.fynanse.Fynanse.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 

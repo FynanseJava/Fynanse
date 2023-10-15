@@ -1,4 +1,4 @@
-package com.fynanse.Fynanse.api.models;
+package com.fynanse.Fynanse.models;
 
 import jakarta.persistence.*;
 import lombok.*;

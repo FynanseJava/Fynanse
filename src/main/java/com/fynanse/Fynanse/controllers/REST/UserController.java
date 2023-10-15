@@ -1,7 +1,7 @@
-package com.fynanse.Fynanse.api.controllers;
+package com.fynanse.Fynanse.controllers.REST;
 
-import com.fynanse.Fynanse.api.models.User;
-import com.fynanse.Fynanse.api.services.UserService;
+import com.fynanse.Fynanse.models.User;
+import com.fynanse.Fynanse.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

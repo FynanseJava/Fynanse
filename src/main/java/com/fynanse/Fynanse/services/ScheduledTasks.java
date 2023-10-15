@@ -1,7 +1,7 @@
-package com.fynanse.Fynanse.api.services;
+package com.fynanse.Fynanse.services;
 
-import com.fynanse.Fynanse.api.models.Account;
-import com.fynanse.Fynanse.api.repositories.AccountRepository;
+import com.fynanse.Fynanse.models.Account;
+import com.fynanse.Fynanse.repositories.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;

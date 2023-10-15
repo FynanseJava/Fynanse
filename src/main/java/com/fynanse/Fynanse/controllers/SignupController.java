@@ -1,9 +1,9 @@
-package com.fynanse.Fynanse.Website;
+package com.fynanse.Fynanse.controllers;
 
-import com.fynanse.Fynanse.api.models.Account;
-import com.fynanse.Fynanse.api.models.User;
-import com.fynanse.Fynanse.api.repositories.AccountRepository;
-import com.fynanse.Fynanse.api.services.UserService;
+import com.fynanse.Fynanse.models.Account;
+import com.fynanse.Fynanse.models.User;
+import com.fynanse.Fynanse.repositories.AccountRepository;
+import com.fynanse.Fynanse.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

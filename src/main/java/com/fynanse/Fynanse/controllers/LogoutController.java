@@ -1,7 +1,7 @@
-package com.fynanse.Fynanse.Website;
+package com.fynanse.Fynanse.controllers;
 
-import com.fynanse.Fynanse.api.models.User;
-import com.fynanse.Fynanse.api.services.UserService;
+import com.fynanse.Fynanse.models.User;
+import com.fynanse.Fynanse.services.UserService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
