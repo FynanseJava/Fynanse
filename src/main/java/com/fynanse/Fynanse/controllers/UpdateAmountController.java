@@ -38,7 +38,12 @@ public class UpdateAmountController {
         if(currentUser.isPresent()){
             Account currentUserAccount = userService.getAccount(currentUser.get().getUsername());
             if(isSpending){
-                currentUserAccount.setCurrentBalance(currentUserAccount.getCurrentBalance() - amount);
+                double spendAmount = currentUserAccount.getCurrentBalance() - amount;
+                if(spendAmount < 0){  //negative
+                    model.addAttribute("spendAmount", spendAmount);
+                    return "redirect:/withdraw";
+                }
+                currentUserAccount.setCurrentBalance(spendAmount);
                 currentUserAccount.setLastSpent(amount);
                 currentUserAccount.setWeeklySpent(currentUserAccount.getWeeklySpent()+amount);
                 currentUserAccount.setMonthlySpent(currentUserAccount.getMonthlySpent()+amount);
