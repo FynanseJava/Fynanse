@@ -48,15 +48,15 @@
         <p class="py-6">Login if you want some charm in your life</p>
       </div>
       <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-        <form class="card-body" th:action="@{/loginFormHandle}" th:object="${inputUser}" method="POST">
+        <form class="card-body" th:action="@{/loginFormHandle}" method="POST">
           <div class="form-control">
             <label class="label" for="username"><span class="label-text">Username: </span></label>
-            <input type="text" th:field="*{username}" class="input input-bordered"  name="username" placeholder="Username">
+            <input type="text" th:object="${username}" class="input input-bordered"  name="username" placeholder="Username">
           </div>
           <div class="form-control">
             <label class="label" for="userPassword"><span class="label-text">Password: </span></label>
             <!-- <input type="password" placeholder="password"  required /> -->
-            <input type="password" th:field="*{userPassword}" class="input input-bordered" name="userPassword"
+            <input type="password" th:object="${userPassword}" class="input input-bordered" name="userPassword"
               placeholder="Password">
           </div>
           <div class="form-control mt-6">
