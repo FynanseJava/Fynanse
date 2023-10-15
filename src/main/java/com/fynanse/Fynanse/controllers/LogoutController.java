@@ -21,7 +21,8 @@ public class LogoutController {
             return "redirect:/login";
         }
         HttpSession session = request.getSession();
-        session.setAttribute("currentUser", new User());
+        session.setAttribute("currentUser", null);
+        session.invalidate();
         userService.updateUser(currentUser.get());
         return "redirect:/login";
     }
