@@ -31,7 +31,7 @@
     width: 1px;
     height: 100%;
     background-color: #A6ACBA;
-    animation: lineAnimation 2s ease-in-out infinite forwards;
+    animation: lineAnimation 3s ease-in-out infinite forwards;
   }
   .stat-group-up::before,
   .stat-group-up::after{
@@ -40,7 +40,7 @@
     width: 1px;
     height: 100%;
     background-color: #A6ACBA;
-    animation: lineAnimationup 2s ease-in-out infinite forwards;
+    animation: lineAnimationup 3s ease-in-out infinite forwards;
   }
 
   /* up to down */
