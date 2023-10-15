@@ -12,15 +12,13 @@ import java.util.Objects;
 @RequiredArgsConstructor
 @Entity
 @Table(name="USER")
-public class User {
+public class User{
     @Id
     @Column(nullable = false, unique = true)
     private String username;
     private String userPassword;
     private String firstName;
     private String lastName;
-    @Column(columnDefinition = "boolean default false")
-    public Boolean loggedIn = false;
     @ManyToOne
     @JoinColumn(name = "account_id")
     private Account account;

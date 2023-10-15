@@ -3,6 +3,7 @@ package com.fynanse.Fynanse.Website;
 import com.fynanse.Fynanse.api.models.Account;
 import com.fynanse.Fynanse.api.models.User;
 import com.fynanse.Fynanse.api.services.UserService;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,8 +18,8 @@ public class DashboardController {
     @Autowired
     private UserService userService;
     @GetMapping("/")
-    public String showHome(){
-        Optional<User> currentUser = userService.getCurrentUser();
+    public String showHome(HttpServletRequest request){
+        Optional<User> currentUser = userService.getCurrentUser(request);
         if(currentUser.isPresent()){
             return "redirect:/dashboard";
         }
@@ -27,8 +28,8 @@ public class DashboardController {
         }
     }
     @GetMapping("/dashboard")
-    public String showDashboard(Model model){
-        Optional<User> currentUser = userService.getCurrentUser();
+    public String showDashboard(Model model, HttpServletRequest request){
+        Optional<User> currentUser = userService.getCurrentUser(request);
         if(currentUser.isEmpty()) {
             return "redirect:/login";
         }
