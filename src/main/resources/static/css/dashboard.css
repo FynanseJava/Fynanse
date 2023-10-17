@@ -2,8 +2,10 @@
     width: 250px;
     height: 250px;
     position: relative;
-    background-color: #5616C6; /* Dark background color */
-    border: 5px solid #5616C6; /* Whitish border color */
+    background-color: #5616C6; 
+    border: 5px solid #5616C6;  
+    background-color: #6419E6; 
+    border: 5px solid #6419E6;  
   
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   }
@@ -31,6 +33,7 @@
     width: 1px;
     height: 100%;
     background-color: #A6ACBA;
+    /* background-color: #5616C6; */
     animation: lineAnimation 3s ease-in-out infinite forwards;
   }
   .stat-group-up::before,
@@ -39,7 +42,9 @@
     position: absolute;
     width: 1px;
     height: 100%;
+    
     background-color: #A6ACBA;
+    /* background-color: #5616C6; */
     animation: lineAnimationup 3s ease-in-out infinite forwards;
   }
 
@@ -83,4 +88,6 @@
     right: 0;
     top: 0;
   }
+  
+
   
