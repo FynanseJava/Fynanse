@@ -39,6 +39,13 @@
     <p>Amount</p>
   </div>
 
+    <!--     this is show the user an error when user is trying to withdraw more than what they have-->
+  <!--     style this however you want.-->
+  <div class="error">
+    <div th:if="${errorMessage != null}">
+      <span th:text="${errorMessage}"></span>
+    </div>
+  </div>
   <div class="flex justify-center m-5">
     <div class="form-control">
       <label class="label text-center">
@@ -70,13 +77,8 @@
       
     </div>
   </div>
-  <!--     this is show the user an error when user is trying to withdraw more than what they have-->
-  <!--     style this however you want.-->
-  <div class="error">
-    <div th:if="${errorMessage != null}">
-      <span th:text="${errorMessage}"></span>
-    </div>
-  </div>
+
+
   <div>
     <form th:action="@{/updateAmount}" th:method="POST">
       <input type="number" name="amount" th:object="${amount}" th:placeholder="${updateTitle}">
