@@ -37,12 +37,12 @@
   <div class="flex justify-center m-5">
     <div class="form-control">
       <label class="label text-center">
-        <span class="label-text">Enter amount</span>
+        <span class="label-text text-base">Enter amount</span>
       </label>
       <form th:action="@{/updateAmount}" th:method="POST">
         <label class="input-group text-primary">
           <span>Price</span>
-          <input type="number" id="input-balance" placeholder="0" class="input input-bordered" name="amount"
+          <input type="number" id="input-balance" placeholder="10" class="input input-bordered" name="amount"
             th:object="${amount}" th:placeholder="${updateTitle}" />
             
           <span>TK</span>
@@ -52,40 +52,27 @@
     </div>
   </div>
   <div class="flex justify-center mt-5">
-    <select class="select select-primary w-full max-w-xs">
-      <option disabled selected>What is the best Anime / TV show?</option>
-      <option>Demon Slayer</option>
-      <option>Rurourni Kenshin</option>
-      <option>Death Note</option>
-      <option>Attack on Titan</option>
-      <option>Bleach</option>
-      <option>Fullmetal Alchemist</option>
-      <option>Jojo's Bizarre Adventure</option>
-    </select>
-  </div>
+  <select class="select select-primary w-full max-w-xs">
+    <option disabled selected>What is the best Anime / TV show?</option>
+    <option>Food Expenses</option>
+    <option>Transportation</option>
+    <option>Phone</option>
+    <option>Barber’s</option>
+    <option>Excercise</option>
+    <option>Clothing</option>
+    <option>Family Event</option>
+    <option>Bills</option>
+  </select>
+</div>
   <h1 th:text="${updateTitle}"></h1>
   <p>Amount</p>
   <!--     this is show the user an error when user is trying to withdraw more than what they have-->
   <!--     style this however you want.-->
-  <!-- <div class="error">
-    <div class="alert alert-error" th:if="${errorMessage != null}">
-      <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-          d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-      <span th:text="${errorMessage}"></span>
-    </div>
-  </div> -->
   <div class="error">
     <div th:if="${errorMessage != null}">
-      <!-- <div class="alert alert-error"">
-        <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-      </div> -->
-
       <span th:text="${errorMessage}"></span>
     </div>
   </div>
-
   <div>
     <form th:action="@{/updateAmount}" th:method="POST">
       <input type="number" name="amount" th:object="${amount}" th:placeholder="${updateTitle}">
