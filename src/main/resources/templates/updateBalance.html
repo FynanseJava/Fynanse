@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
 <head>
-    <meta charset="UTF-8">
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.2/dist/full.css" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title th:text="${updateTitle}"></title>
+  <meta charset="UTF-8">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.2/dist/full.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title th:text="${updateTitle}"></title>
 </head>
+
 <body>
-     <div class="navbar bg-base-100 shadow-xl">
+  <div class="navbar bg-base-100 shadow-xl">
     <div class="navbar-start">
       <div class="dropdown">
         <label tabindex="0" class="btn btn-ghost btn-circle">
@@ -60,20 +62,21 @@
   </select>
 </div>
   <h1 th:text="${updateTitle}"></h1>
-    <p>Amount</p>
-<!--     this is show the user an error when user is trying to withdraw more than what they have-->
-<!--     style this however you want.-->
-    <div class="error">
-      <div th:if="${errorMessage != null}">
-        <span th:text="${errorMessage}"></span>
-      </div>
+  <p>Amount</p>
+  <!--     this is show the user an error when user is trying to withdraw more than what they have-->
+  <!--     style this however you want.-->
+  <div class="error">
+    <div th:if="${errorMessage != null}">
+      <span th:text="${errorMessage}"></span>
     </div>
-    <div>
-        <form th:action="@{/updateAmount}" th:method="POST">
-            <input type="number" name="amount" th:object="${amount}" th:placeholder="${updateTitle}">
-            <button type="submit">Ok</button>
-        </form>
-    </div>
-    <a href="/dashboard">Go back</a>
+  </div>
+  <div>
+    <form th:action="@{/updateAmount}" th:method="POST">
+      <input type="number" name="amount" th:object="${amount}" th:placeholder="${updateTitle}">
+      <button type="submit">Ok</button>
+    </form>
+  </div>
+  <a href="/dashboard">Go back</a>
 </body>
+
 </html>
