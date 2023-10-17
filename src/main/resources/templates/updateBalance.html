@@ -44,7 +44,6 @@
           <span>Price</span>
           <input type="number" id="input-balance" placeholder="10" class="input input-bordered" name="amount"
             th:object="${amount}" th:placeholder="${updateTitle}" />
-            
           <span>TK</span>
         </label>
         <button type="submit">Ok</button>
@@ -52,18 +51,18 @@
     </div>
   </div>
   <div class="flex justify-center mt-5">
-  <select class="select select-primary w-full max-w-xs">
-    <option disabled selected>Category</option>
-    <option>Food Expenses</option>
-    <option>Transportation</option>
-    <option>Phone</option>
-    <option>Barber’s</option>
-    <option>Excercise</option>
-    <option>Clothing</option>
-    <option>Family Event</option>
-    <option>Bills</option>
-  </select>
-</div>
+    <select class="select select-primary w-full max-w-xs">
+      <option disabled selected>Category</option>
+      <option>Food Expenses</option>
+      <option>Transportation</option>
+      <option>Phone</option>
+      <option>Barber’s</option>
+      <option>Excercise</option>
+      <option>Clothing</option>
+      <option>Family Event</option>
+      <option>Bills</option>
+    </select>
+  </div>
   <h1 th:text="${updateTitle}"></h1>
   <p>Amount</p>
   <!--     this is show the user an error when user is trying to withdraw more than what they have-->
