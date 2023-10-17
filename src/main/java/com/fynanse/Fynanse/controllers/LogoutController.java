@@ -20,8 +20,10 @@ public class LogoutController {
         if(currentUser.isEmpty()){
             return "redirect:/login";
         }
+        //ending the current session of the User
         HttpSession session = request.getSession();
-        session.setAttribute("currentUser", new User());
+        session.setAttribute("currentUser", null);
+        session.invalidate();
         userService.updateUser(currentUser.get());
         return "redirect:/login";
     }

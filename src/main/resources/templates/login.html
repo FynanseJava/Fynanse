@@ -71,7 +71,9 @@
             <span th:text="${USERNAME_NOT_FOUND}"></span>
             <a href="/signup">sign up?</a>
           </div>
-          <p th:if="${PASSWORD_INCORRECT!= null}" th:text="${PASSWORD_INCORRECT}"></p>
+          <div th:if="${PASSWORD_INCORRECT != null}">
+            <span th:text="${PASSWORD_INCORRECT}"></span>
+          </div>
         </div>
       </div>
     </div>

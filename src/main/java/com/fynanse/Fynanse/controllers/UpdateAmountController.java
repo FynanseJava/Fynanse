@@ -20,6 +20,7 @@ public class UpdateAmountController {
     @Autowired
     private UserService userService;
     static boolean isSpending;
+    //for dynamic changes to the html
     @GetMapping(value={"/deposit", "/withdraw"})
     public String showUpdatePage(Model model, HttpServletRequest request){
         String uri = request.getRequestURI();
@@ -35,11 +36,15 @@ public class UpdateAmountController {
     }
     @RequestMapping(value = "/updateAmount", method = RequestMethod.POST)
     public String updateCurrentAmount(@ModelAttribute("amount") double amount, Model model, HttpServletRequest request, RedirectAttributes redirectAttributes){
+        //getting the user
         Optional<User> currentUser = userService.getCurrentUser(request);
         if(currentUser.isPresent()){
+            //getting the account
             Account currentUserAccount = userService.getAccount(currentUser.get().getUsername());
             if(isSpending){
+                //updating balances
                 double spendAmount = currentUserAccount.getCurrentBalance() - amount;
+                //won't let the user spend more than what is available
                 if(spendAmount < 0){  //negative
                     redirectAttributes.addFlashAttribute("errorMessage", "You can not withdraw more than you have available");
                     return "redirect:/withdraw";
