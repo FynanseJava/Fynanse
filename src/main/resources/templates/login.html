@@ -66,10 +66,10 @@
         </form>
 <!--        these are dynamic messages. Like showing the user messages depending on what error it was-->
 <!--        style these as well-->
-        <div class="errors">
+        <div class="errors text-center m-2">
           <div th:if="${USERNAME_NOT_FOUND != null}">
             <span th:text="${USERNAME_NOT_FOUND}"></span>
-            <a href="/signup">sign up?</a>
+            <a class="link link-secondary" href="/signup">sign up?</a>
           </div>
           <div th:if="${PASSWORD_INCORRECT != null}">
             <span th:text="${PASSWORD_INCORRECT}"></span>
