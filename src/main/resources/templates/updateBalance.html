@@ -34,22 +34,18 @@
       </div>
     </div>
   </div>
-
-  <!-- <div class="flex justify-center m-5">
-    <div class="form-control">
-      <label class="label text-center">
-        <span class="label-text">Enter amount</span>
-      </label>
-      <form th:action="@{/updateAmount}" th:method="POST">
-        <label class="input-group text-primary">
-          <span>Price</span>
-          <input type="number" id="input-balance" placeholder="10" class="input input-bordered" name="amount"
-            th:object="${amount}" th:placeholder="${updateTitle}" />
-          <span>TK</span>
-        </label>
-      </form>
-    </div>
-  </div> -->
+  <div class="flex justify-center mt-5">
+  <select class="select select-primary w-full max-w-xs">
+    <option disabled selected>What is the best Anime / TV show?</option>
+    <option>Demon Slayer</option>
+    <option>Rurourni Kenshin</option>
+    <option>Death Note</option>
+    <option>Attack on Titan</option>
+    <option>Bleach</option>
+    <option>Fullmetal Alchemist</option>
+    <option>Jojo's Bizarre Adventure</option>
+  </select>
+</div>
   <h1 th:text="${updateTitle}"></h1>
   <p>Amount</p>
   <!--     this is show the user an error when user is trying to withdraw more than what they have-->
