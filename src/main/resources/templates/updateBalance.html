@@ -51,25 +51,23 @@
             th:object="${amount}" th:placeholder="${updateTitle}" />
           <span>TK</span>
         </label>
-        
+        <div class="flex justify-center mt-5">
+          <select class="select select-primary w-full max-w-xs">
+            <option disabled selected>Category</option>
+            <option>Food Expenses</option>
+            <option>Transportation</option>
+            <option>Phone</option>
+            <option>Barber’s</option>
+            <option>Excercise</option>
+            <option>Clothing</option>
+            <option>Family Event</option>
+            <option>Bills</option>
+          </select>
+        </div>    
         <div class="flex justify-center"><button type="submit">Ok</button></div>
       </form>
     </div>
   </div>
-  <div class="flex justify-center mt-5">
-    <select class="select select-primary w-full max-w-xs">
-      <option disabled selected>Category</option>
-      <option>Food Expenses</option>
-      <option>Transportation</option>
-      <option>Phone</option>
-      <option>Barber’s</option>
-      <option>Excercise</option>
-      <option>Clothing</option>
-      <option>Family Event</option>
-      <option>Bills</option>
-    </select>
-  </div>
-
   <!--     this is show the user an error when user is trying to withdraw more than what they have-->
   <!--     style this however you want.-->
   <div class="error">
