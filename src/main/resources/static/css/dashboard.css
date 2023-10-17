@@ -9,6 +9,13 @@
   
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   }
+  /* .hexagon {
+    width: 100px;
+    height: 100px;
+    background-color: #000;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  } */
+  
   
 .down{
     position: relative;

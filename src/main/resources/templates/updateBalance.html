@@ -51,10 +51,10 @@
       <label class="label text-center">
         <span class="label-text text-base">Enter amount</span>
       </label>
-      <form th:action="@{/updateAmount}" th:method="POST">
+      <form class="flex justify-center flex-col" th:action="@{/updateAmount}" th:method="POST">
         <label class="input-group text-primary">
           <span>Price</span>
-          <input type="number" id="input-balance" placeholder="10" class="input input-bordered" name="amount"
+          <input type="number" id="input-balance" placeholder="10" class="input input-bordered" name="amount" oninput="validateInput(this)"
             th:object="${amount}" th:placeholder="${updateTitle}" />
           <span>TK</span>
         </label>
@@ -70,8 +70,10 @@
             <option>Family Event</option>
             <option>Bills</option>
           </select>
-        </div>    
-        <div class="flex justify-center btn-primary my-5 h-12 rounded-lg font-semibold text-lg"><button type="submit">OK</button></div>
+        </div>  
+        <div></div>
+        <button class="flex justify-center btn btn-primary my-5 h-12 rounded-lg font-semibold text-lg" type="submit">OK</button>
+        <!-- <div class="flex justify-center btn-primary my-5 h-12 rounded-lg font-semibold text-lg"><button type="submit">OK</button></div> -->
       </form>
       <div class="flex justify-center"><a class="link link-secondary" href="/dashboard">Go back</a></div>
       
@@ -86,6 +88,17 @@
     </form>
   </div>
   <a href="/dashboard">Go back</a> -->
+  <script>
+    function validateInput(input) {
+      // Remove non-numeric characters (except for a single decimal point)
+      input.value = input.value.replace(/[^0-9.]/g, '');
+    
+      // Prevent negative numbers
+      if (input.value < 0) {
+        input.value = '0';
+      }
+    }
+    </script>
 </body>
 
 </html>
