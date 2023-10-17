@@ -5,6 +5,7 @@ import lombok.*;
 import org.hibernate.proxy.HibernateProxy;
 
 import java.util.Objects;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -22,6 +23,9 @@ public class User{
     @ManyToOne
     @JoinColumn(name = "account_id")
     private Account account;
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @ToString.Exclude
+    private Set<Transactions> transactions;
 
     @Override
     public final boolean equals(Object o) {
