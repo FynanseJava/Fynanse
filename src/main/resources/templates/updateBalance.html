@@ -34,11 +34,10 @@
       </div>
     </div>
   </div>
-  <div class="text-center">
+  <!-- <div class="text-center text-lg font-normal">
     <h1 th:text="${updateTitle}"></h1>
-    <p class="text-lg font-normal">Amount</p>
-  </div>
-
+    <p>Amount</p>
+  </div> -->
     <!--     this is show the user an error when user is trying to withdraw more than what they have-->
   <!--     style this however you want.-->
   <div class="error">
@@ -76,11 +75,8 @@
         <!-- <div class="flex justify-center btn-primary my-5 h-12 rounded-lg font-semibold text-lg"><button type="submit">OK</button></div> -->
       </form>
       <div class="flex justify-center"><a class="link link-secondary" href="/dashboard">Go back</a></div>
-      
     </div>
   </div>
-
-
   <!-- <div>
     <form th:action="@{/updateAmount}" th:method="POST">
       <input type="number" name="amount" th:object="${amount}" th:placeholder="${updateTitle}">
