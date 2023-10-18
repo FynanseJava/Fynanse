@@ -25,16 +25,16 @@ public class UpdateAmountController {
     public String showUpdatePage(Model model, HttpServletRequest request){
         String uri = request.getRequestURI();
         if(uri.equals("/deposit")){
-            model.addAttribute("updateTitle", "Deposit Amount");
+            model.addAttribute("updateTitle", "Income Amount");
             isSpending = false;
         }
         else if(uri.equals("/withdraw")){
-            model.addAttribute("updateTitle", "Withdraw Amount");
+            model.addAttribute("updateTitle", "Spending Amount");
             isSpending = true;
         }
         return "updateBalance";
     }
-    @RequestMapping(value = "/updateAmount", method = RequestMethod.POST)
+    @RequestMapping(value = "/updateAmount", method = RequestMethod.PUT)
     public String updateCurrentAmount(@ModelAttribute("amount") double amount, Model model, HttpServletRequest request, RedirectAttributes redirectAttributes){
         //getting the user
         Optional<User> currentUser = userService.getCurrentUser(request);
