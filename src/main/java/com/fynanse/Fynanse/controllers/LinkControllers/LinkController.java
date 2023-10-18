@@ -19,10 +19,10 @@ public class LinkController {
     public String showLoginPage() {
         return "login";
     }
-//    @GetMapping("/error")
-//    public String showErrorPage(){
-//        return "error";
-//    }
+    @GetMapping("/error")
+    public String showErrorPage(){
+        return "error";
+    }
     @GetMapping("/about")
     public String showAboutPage() {
         return "about";
