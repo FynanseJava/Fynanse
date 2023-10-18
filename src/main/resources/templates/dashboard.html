@@ -76,7 +76,7 @@
         </div>
         <div class="stat-title text-white">Current Balance:</div>
         <span class="stat-value text-white"
-          th:text="${#numbers.formatDecimal(currentBalance, 3, 0, 'POINT')}+' tk'"></span>
+          th:text="${#numbers.formatDecimal(currentBalance, 3,'COMMA', 0, 'POINT')}+' tk'"></span>
       </div>
 
       <!--        Daily Budget Info-->
@@ -160,8 +160,7 @@
         </div>
         <div class="stat-title text-white">Days remaining till next month:</div>
         <span class="stat-value text-white" th:text="${daysRemaining}"> days</span>
-        <div class="stat-desc text-[#3FB950]"><span th:text="${thisMonth}"></span> 1st - <span
-            th:text="${nextMonth}"></span> 1st</div>
+        <div class="stat-desc text-[#3FB950]"><span th:text="${thisMonth}"></span> 1st - <span th:text="${nextMonth}"></span> 1st</div>
       </div>
 
     </div>
@@ -176,6 +175,9 @@
     <a href="/withdraw"><button class="btn bg-[#D827A9] w-36 h-14 text-xl font-bold text-white">Spending</button></a>
   </div>
   <!-- <hr> -->
+  <section class="history">
+    <a href="/seeHistory">See All Transactions Till now</a>
+  </section>
 
 
 
