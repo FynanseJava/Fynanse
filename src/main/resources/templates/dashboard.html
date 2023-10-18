@@ -41,13 +41,13 @@
   </div>
   <h1 class="font-bold text-lg text-center mt-4">
     <p>
-      Hi <span th:text="${firstName}"></span> <span th:text="${lastName}"></span>
+      Hi! <span th:text="${firstName}"></span> <span th:text="${lastName}"></span>
     </p>
   </h1>
 
   <th:object="${currentUser}" />
   <!-- <hr> -->
-  <div class="mt-5">
+  <div class="mt-5 flex flex-col justify-center">
 
     <!--      First Row-->
     <div class="stats box-border max-md:flex-col flex mx-48 mb-0 bg-transparent stat-group-up overflow-hidden">
