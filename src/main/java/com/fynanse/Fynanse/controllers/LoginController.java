@@ -17,7 +17,11 @@ public class LoginController {
     @Autowired
     private UserService userService;
     @RequestMapping(path="/loginFormHandle", method = RequestMethod.POST)
-    public String loginFormHandle(@ModelAttribute("username") String inputUsername, @ModelAttribute("userPassword") String inputPassword, HttpServletRequest request, RedirectAttributes redirectAttributes) {
+    public String loginFormHandle(
+            @ModelAttribute("username") String inputUsername,
+            @ModelAttribute("userPassword") String inputPassword,
+            HttpServletRequest request,
+            RedirectAttributes redirectAttributes) {
         //validating the user manually because that's totally safe to do :)
         Optional<User> storedUser = userService.getUserById(inputUsername);
         //sending error messages to the html
