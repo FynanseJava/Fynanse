@@ -36,8 +36,8 @@ public class UserService {
     public void updateUser(User user) {
         userRepository.save(user);
     }
-    public void deleteUser(String username) {
-        userRepository.deleteById(username);
+    public void deleteUser(User user) {
+        userRepository.delete(user);
     }
     public Account getAccount(String username){
         return accountRepository.findByUserUsername(username);

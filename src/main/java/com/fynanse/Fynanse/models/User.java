@@ -27,6 +27,7 @@ public class User{
     @ToString.Exclude
     private Set<Transactions> transactions;
 
+
     @Override
     public final boolean equals(Object o) {
         if (this == o) return true;
