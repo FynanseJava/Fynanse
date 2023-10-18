@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Transaction History</title>
+</head>
+<body>
+    <h1>Transaction History</h1>
+    <table align="center">
+        <thead>
+            <tr>
+                <th>TransactionID</th>
+                <th>Date</th>
+                <th>Amount Spent</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="transaction : ${transactionSet}">
+                <td th:text="${transaction.id}"></td>
+                <td th:text="${#dates.format(transaction.transactionDate, 'dd/MMM/yyyy, hh:mm a')}"></td>
+                <td th:text="${#numbers.formatDecimal(transaction.amount, 0, 0, 'POINT')}"></td>
+                <td th:text="${transaction.description}"></td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
