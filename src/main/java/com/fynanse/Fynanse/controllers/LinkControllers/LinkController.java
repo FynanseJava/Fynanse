@@ -19,20 +19,10 @@ public class LinkController {
     public String showLoginPage() {
         return "login";
     }
-    @GetMapping("/error")
-    public String showErrorPage(){
-        return "error";
-    }
-    @GetMapping("/settings")
-    public String showSettings(Model model, HttpServletRequest request){
-        Optional<User> currentUser = userService.getCurrentUser(request);
-        if (currentUser.isEmpty()){
-            return "redirect:/login";
-        }
-        model.addAttribute("updatedUser", currentUser.get());
-        model.addAttribute("currentUser", currentUser.get());
-        return "settings";
-    }
+//    @GetMapping("/error")
+//    public String showErrorPage(){
+//        return "error";
+//    }
     @GetMapping("/about")
     public String showAboutPage() {
         return "about";
