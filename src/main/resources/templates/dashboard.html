@@ -70,7 +70,7 @@
       <div class="hexinfo">
         <div class="stat-title text-white">Daily Budget</div>
         <span class="stat-value text-white" th:text="${#numbers.formatDecimal(dailyBudget, 0, 0, 'POINT')}+' tk'">Demo tk</span>
-        <div class="stat-desc text-[#3FB950]" th:text="${#numbers.formatDecimal(dailyBudgetPercentage, 0, 1, 'POINT')}+'% per day'">Demo text</div>
+        <div class="stat-desc text-emerald-300 th:text="${#numbers.formatDecimal(dailyBudgetPercentage, 0, 1, 'POINT')}+'% per day'">Demo text</div>
       </div>
     </div>
 
@@ -79,7 +79,7 @@
       <div class="hexinfo">
         <div class="stat-title text-white">Remaining</div>
         <div class="stat-value text-white" th:text="${#numbers.formatDecimal(remainingBalancePercentage, 0, 1, 'POINT')}+'%'">Demo%</div>
-        <div class="stat-desc text-[#3FB950]" th:text="${#numbers.formatDecimal(diffPercentage, 0, 1, 'POINT')}+'% last'"></span>Demo text</div>
+        <div class="stat-desc text-emerald-300 th:text="${#numbers.formatDecimal(diffPercentage, 0, 1, 'POINT')}+'% last'"></span>Demo text</div>
       </div>
     </div>
     <!--        This week info-->
@@ -87,7 +87,7 @@
       <div class="hexinfo">
         <div class="stat-title text-white">This week</div>
         <div class="stat-value text-white" th:text="${#numbers.formatDecimal(spentLastWeek, 2, 0, 'POINT')+' tk'}">Demo tk</div>
-        <div class="stat-desc text-[#3FB950]" th:text="${#numbers.formatDecimal(weeklySpentPercentage, 2, 1, 'POINT')}+'% Spent ('+${#numbers.formatDecimal(weeklyBudgetPercentage, 0, 1, 'POINT')}+'% Per week)'">Demo text</div>
+        <div class="stat-desc text-emerald-300 th:text="${#numbers.formatDecimal(weeklySpentPercentage, 2, 1, 'POINT')}+'% Spent this week'">Demo text</div>
       </div>
     </div>
     <!--        This month Info-->
@@ -95,7 +95,7 @@
       <div class="hexinfo">
         <div class="stat-title text-white">This month</div>
         <div class="stat-value text-white" th:text="${#numbers.formatDecimal(spentLastMonth, 3, 0, 'POINT')}+' tk'">Demo tk</div>
-        <div class="stat-desc text-[#3FB950]" th:text="${thisMonth}+' 1st - '+${nextMonth}+' 1st'">Demo text</div>
+        <div class="stat-desc text-emerald-300 th:text="${thisMonth}+' 1st - '+${nextMonth}+' 1st'">Demo text</div>
       </div>
     </div>
 
@@ -103,8 +103,8 @@
     <div class="stat hexagon second-row">
       <div class="hexinfo">
         <div class="star-title text-white">Days till next month</div>
-        <div class="stat-value text-white" th:text="${daysRemaining}">Demo</div>
-        <div class="stat-desc text-[#3FB950]" th:text="${thisMonth}+' 1st - '+${nextMonth}+' 1st'">Demo text</div>
+        <div class="stat-value text-white" th:text="${daysRemaining}+' days'">Demo</div>
+        <div class="stat-desc text-emerald-300" th:text="${thisMonth}+' 1st - '+${nextMonth}+' 1st'">Demo text</div>
       </div>
     </div>
   </div>
