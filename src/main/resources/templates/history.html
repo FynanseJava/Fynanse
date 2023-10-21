@@ -19,6 +19,7 @@
               </svg>
             </label>
             <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+              <li><a href="/dashboard">Dashboard</a></li>
               <li><a href="/settings">Settings</a></li>
               <li><a href="/about">About</a></li>
             </ul>
@@ -34,16 +35,16 @@
           </div>
         </div>
       </div>
-    <h1>Transaction History</h1>
+    <!-- <h1>Transaction History</h1> -->
     <table align="center">
-        <thead>
+        <!-- <thead>
             <tr>
                 <th>TransactionID</th>
                 <th>Date</th>
                 <th>Amount Spent</th>
                 <th>Description</th>
             </tr>
-        </thead>
+        </thead> -->
         <tbody>
             <tr th:each="transaction : ${transactionSet}">
                 <td th:text="${transaction.id}"></td>
@@ -52,6 +53,36 @@
                 <td th:text="${transaction.description}"></td>
             </tr>
         </tbody>
+        <div class="overflow-x-auto">
+            <table class="table table-xs">
+              <thead>
+                <tr>
+                  <th></th> 
+                  <th>TransactionID</th>
+                  <th>Date</th>
+                  <th>Amount Spent</th>
+                  <th>Description</th>
+                </tr>
+              </thead> 
+              <tbody>
+                <tr th:each="transaction : ${transactionSet}">
+                    <td th:text="${transaction.id}"></td>
+                    <td th:text="${#dates.format(transaction.transactionDate, 'dd/MMM/yyyy, hh:mm a')}"></td>
+                    <td th:text="${#numbers.formatDecimal(transaction.amount, 0, 0, 'POINT')}"></td>
+                    <td th:text="${transaction.description}"></td>
+                </tr>
+            </tbody>
+              <tfoot>
+                <tr>
+                    <th></th> 
+                    <th>TransactionID</th>
+                    <th>Date</th>
+                    <th>Amount Spent</th>
+                    <th>Description</th>
+                  </tr>
+              </tfoot>
+            </table>
+          </div>
     </table>
     
 
