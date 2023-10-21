@@ -32,7 +32,11 @@ public class SignupController {
         return "signup";
     }
     @RequestMapping(path = "/signUpFormHanlde", method = RequestMethod.POST)
-    public String addUser(@ModelAttribute("user") User newUser, @ModelAttribute("startingBalance") double amount, RedirectAttributes redirectAttributes, HttpServletRequest request){
+    public String addUser(
+            @ModelAttribute("newUser") User newUser,
+            @ModelAttribute("startingBalance") double amount,
+            RedirectAttributes redirectAttributes,
+            HttpServletRequest request){
         Optional<User> u = userService.getUserById(newUser.getUsername());
         //seeing if a user with the same username exists or not
         if(u.isPresent()){
@@ -52,5 +56,4 @@ public class SignupController {
         session.setAttribute("currentUsername", newUser.getUsername());
         return "redirect:/dashboard";
     }
-
 }

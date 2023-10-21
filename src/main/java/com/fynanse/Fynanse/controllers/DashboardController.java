@@ -68,8 +68,8 @@ public class DashboardController {
         model.addAttribute("spentLastWeek", account.getWeeklySpent());
         model.addAttribute("spentLastMonth", account.getMonthlySpent());
 
-        model.addAttribute("thisMonth", thisMonth);
-        model.addAttribute("nextMonth", nextMonth);
+        model.addAttribute("thisMonth", thisMonth.toString().substring(0, 3));
+        model.addAttribute("nextMonth", nextMonth.toString().substring(0, 3));
 
         model.addAttribute("dailyBudgetPercentage", dailyBudgetPercentage);
         model.addAttribute("daysRemaining", daysRemaining);
