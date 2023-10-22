@@ -18,7 +18,7 @@ public class TransactionController {
     @Autowired
     private UserService userService;
 
-    @GetMapping("/seeHistory")
+    @GetMapping("/history")
     public String showHistory(HttpServletRequest request, Model model){
         Optional<User> currentUser = userService.getCurrentUser(request);
         if(currentUser.isEmpty()){
