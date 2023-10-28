@@ -18,6 +18,9 @@
         </label>
         <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
           <!-- <li><a>Dashboard</a></li> -->
+          <li class="history">
+            <a href="/history">History</a>
+          </li>
           <li><a>Settings</a></li>
           <li><a>About</a></li>
         </ul>
@@ -45,16 +48,16 @@
       </div> -->
       <h1 class="font-bold text-lg">Sign Up Here!</h1>
       <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 mt-8 ">
-        <form class="card-body" th:action="@{/signUpFormHanlde}" th:method="POST" th:object="${user}">
+        <form class="card-body" th:action="@{/signUpFormHanlde}" th:method="POST" th:object="${newUser}">
           <div class="form-control">
-            <input type="text" th:field="*{username}" class="input input-bordered"  name="username" placeholder="Username">
+            <input type="text" th:field="*{username}" class="input input-bordered"  name="username" placeholder="Username" required>
           </div>
 
           <div class="form-control">
-            <input type="text" th:field="*{firstName}" class="input input-bordered"  name="firstName" placeholder="First Name">
+            <input type="text" th:field="*{firstName}" class="input input-bordered"  name="firstName" placeholder="First Name" required>
           </div>
           <div class="form-control">
-            <input type="text" th:field="*{lastName}" class="input input-bordered"  name="lastName" placeholder="Last Name">
+            <input type="text" th:field="*{lastName}" class="input input-bordered"  name="lastName" placeholder="Last Name" required>
           </div>
           <div class="form-control">
             <input type="password" th:field="*{userPassword}" class="input input-bordered" name="userPassword" placeholder="Password" required>
@@ -62,13 +65,13 @@
           <div class="form-control mb-3">
             <!-- <input type="number" class="input text-purple-500 input-bordered " th:object="${startingBalance}" name="startingBalance" placeholder="Starting Balance"> -->
             <label class="input-group overflow-hidden">
-              <input type="number" class="input input-bordered overflow-hidden" th:object="${startingBalance}" name="startingBalance" placeholder="Starting Balance" oninput="validateInput(this)"/>
+              <input type="number" class="input input-bordered overflow-hidden" th:object="${startingBalance}" name="startingBalance" placeholder="Starting Balance" required oninput="validateInput(this)"/>
               <span>BDT</span>
             </label>
           </div>
           <div class="form-control">
             <!-- <button class="btn btn-primary">Login</button> -->
-            <button class="btn btn-primary box-border border-2" type="submit">Submit</button>
+            <button class="btn btn-primary box-border border-2" type="submit">Sign Up</button>
           </div>
         </form>
       </div>

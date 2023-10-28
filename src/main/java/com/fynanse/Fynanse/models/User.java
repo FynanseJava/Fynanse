@@ -25,7 +25,8 @@ public class User{
     private Account account;
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     @ToString.Exclude
-    private Set<Transactions> transactions;
+    private Set<Transaction> transactions;
+
 
     @Override
     public final boolean equals(Object o) {

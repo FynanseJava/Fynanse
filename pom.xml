@@ -14,7 +14,7 @@
 	
 	<artifactId>fynanse</artifactId>
 	
-	<version>Pre-release_0.38.7</version>
+	<version>Pre-release_0.80.20</version>
 	
 	<name>Fynanse</name>
 	
@@ -49,11 +49,6 @@
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-cache</artifactId>
-		</dependency>
-		
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 			<scope>runtime</scope>
 			<optional>true</optional>
@@ -85,10 +80,10 @@
 			<scope>test</scope>
 		</dependency>
 		
-        	<dependency>
-            		<groupId>junit</groupId>
-            		<artifactId>junit</artifactId>
-        	</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
 		
 		<dependency>
 			<groupId>org.projectlombok</groupId>

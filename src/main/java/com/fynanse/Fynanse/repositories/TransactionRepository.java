@@ -1,7 +1,10 @@
 package com.fynanse.Fynanse.repositories;
 
-import com.fynanse.Fynanse.models.Transactions;
+import com.fynanse.Fynanse.models.Transaction;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface TransactionRepository extends JpaRepository<Transactions, Long> {
+import java.util.Set;
+
+public interface TransactionRepository extends JpaRepository<Transaction, Long> {
+    public Set<Transaction> findByUserUsername(String username);
 }

@@ -24,20 +24,14 @@ public class UserService {
     public Optional<User> getUserById(String username){
         return userRepository.findById(username);
     }
-    public Optional<User> getUser(String username){
-        return userRepository.findById(username);
-    }
     public void addUser(User user) {
-        userRepository.save(user);
-    }
-    public void updateUser(String username, User user) {
         userRepository.save(user);
     }
     public void updateUser(User user) {
         userRepository.save(user);
     }
-    public void deleteUser(String username) {
-        userRepository.deleteById(username);
+    public void deleteUser(User user) {
+        userRepository.delete(user);
     }
     public Account getAccount(String username){
         return accountRepository.findByUserUsername(username);

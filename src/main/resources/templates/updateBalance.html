@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
 <head>
-    <meta charset="UTF-8">
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.2/dist/full.css" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title th:text="${updateTitle}"></title>
+  <meta charset="UTF-8">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.2/dist/full.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title th:text="${updateTitle}"></title>
 </head>
+
 <body>
-     <div class="navbar bg-base-100 shadow-xl">
+  <div class="navbar bg-base-100 shadow-xl">
     <div class="navbar-start">
       <div class="dropdown">
         <label tabindex="0" class="btn btn-ghost btn-circle">
@@ -16,9 +18,12 @@
           </svg>
         </label>
         <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-          <!-- <li><a>Dashboard</a></li> -->
-          <li><a>Settings</a></li>
-          <li><a>About</a></li>
+           <li><a href="/dashboard">Dashboard</a></li>
+           <li class="history">
+            <a href="/history">History</a>
+          </li>
+          <li><a href="/settings">Settings</a></li>
+          <li><a href="/about">About</a></li>
         </ul>
       </div>
     </div>
@@ -32,23 +37,66 @@
       </div>
     </div>
   </div>
-  
-
-  <h1 th:text="${updateTitle}"></h1>
+  <!-- <div class="text-center text-lg font-normal">
+    <h1 th:text="${updateTitle}"></h1>
     <p>Amount</p>
-<!--     this is show the user an error when user is trying to withdraw more than what they have-->
-<!--     style this however you want.-->
-    <div class="error">
-      <div th:if="${errorMessage != null}">
-        <span th:text="${errorMessage}"></span>
-      </div>
+  </div> -->
+    <!--     this is show the user an error when user is trying to withdraw more than what they have-->
+  <!--     style this however you want.-->
+  <div class="error">
+    <div th:if="${errorMessage != null}">
+      <span th:text="${errorMessage}"></span>
     </div>
-    <div>
-        <form th:action="@{/updateAmount}" th:method="POST">
-            <input type="number" name="amount" th:object="${amount}" th:placeholder="${updateTitle}">
-            <button type="submit">Ok</button>
-        </form>
+  </div>
+  <div class="flex justify-center m-5 mt-28">
+    <div class="form-control">
+      <label class="label text-center">
+        <span class="label-text text-base">Enter amount</span>
+      </label>
+      <form class="flex justify-center flex-col" th:action="@{/updateAmount}" th:method="POST" th:object="${transaction}">
+        <label class="input-group text-primary">
+          <span>Price</span>
+          <input type="number" id="input-balance" placeholder="10" class="input input-bordered text-white" name="amount" oninput="validateInput(this)"
+            th:object="${amount}" th:placeholder="${updateTitle}" />
+          <span>TK</span>
+        </label>
+        <div class="flex justify-center mt-5">
+            <select class="select select-primary w-full max-w-xs" th:field="*{description}">
+              <option th:value="None" selected>Category</option>
+              <option th:value="Food">Food Expenses</option>
+              <option th:value="Transportation">Transportation</option>
+              <option th:value="Phone">Phone</option>
+              <option th:value="Barbers">Barber’s</option>
+              <option th:value="Exercise">Exercise</option>
+              <option th:value="Clothing">Clothing</option>
+              <option th:value="Family">Family Event</option>
+              <option th:value="Bills">Bills</option>
+            </select>
+        </div>
+        <button class="flex justify-center btn btn-primary my-5 h-12 rounded-lg font-semibold text-lg bg-[#6419e6]" type="submit">OK</button>
+        <!-- <div class="flex justify-center btn-primary my-5 h-12 rounded-lg font-semibold text-lg"><button type="submit">OK</button></div> -->
+      </form>
+      <div class="flex justify-center"><a class="link link-secondary" href="/dashboard">Go back</a></div>
     </div>
-    <a href="/dashboard">Go back</a>
+  </div>
+  <!-- <div>
+    <form th:action="@{/updateAmount}" th:method="POST">
+      <input type="number" name="amount" th:object="${amount}" th:placeholder="${updateTitle}">
+      <button type="submit">Ok</button>
+    </form>
+  </div>
+  <a href="/dashboard">Go back</a> -->
+  <script>
+    function validateInput(input) {
+      // Remove non-numeric characters (except for a single decimal point)
+      input.value = input.value.replace(/[^0-9.]/g, '');
+    
+      // Prevent negative numbers
+      if (input.value < 0) {
+        input.value = '0';
+      }
+    }
+    </script>
 </body>
+
 </html>
