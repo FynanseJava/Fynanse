@@ -14,7 +14,6 @@ workspace.xml
 tasks.xml
 .original
 #target folder
-target/*
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
