@@ -3,6 +3,19 @@ A web application in Java to manage personal transaction
 
 ## ABSTRACT
 Saving money is an essential part of anybody’s life. Specially students. But sadly, most of the students, even us, face difficulty keeping tabs on where we spend our money. We don’t see how much daily budget we have, nor how much we are spending every week or month. That is why the proposed system will help general people to manage their accounts and keeps tabs on it as needed. A complete system where the user can create an account on the website and in the dashboard can see his/her account information, add or remove money, tune some settings and access to a history page with how much money is being spent and the category of it.
+
+## Installation and Running the application
+You can access the web application on our hosted site [Fynanse](https://fynanse.onrender.com)
+But if you want to run it locally on your machine simple download the latest **.jar** release. If you have downloaded it your *Download/* folder, then open a terminal and give the following command
+>**Note**: You need to have *Java version 17* or above to run the application in your system	
+
+
+	cd ~/Downloads
+Then run the **.jar** file using the following command.
+
+	java -jar fynanse-1.0.0.jar
+It will take 3-10 seconds to initiate depending your system. After this simply open up your web browser and go to this URL
+	http://localhost:8080
 ## Methodology
 
 The user creates an account if the user is not registered. Other wise can just login with his credentials.  ![Login Page](https://lh7-us.googleusercontent.com/1Q2i5G90Uc3CgeDCRFvKF8kRY9rgAUown-oL0o9dOJ7jrYain0QZ5wBhQfCYsHZWciDIBUK1a4EfAheRRW8j-fH0S-k38yW6MFI28V6LGUxrhV2rRAKe_uNO9vdoEGUuu_7exjU-FyuvrgJWbhU8d1w)
